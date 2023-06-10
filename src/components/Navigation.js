@@ -1,17 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import uniqid from 'uniqid';
 
-const Navigation = (props) => {
-    // const { viewType } = props;
+const Navigation = () => {
+    const linkNames = ['Home', "Men's Clothing", "Women's Clothing", 'Jewelry', 'Electronics'];
+    let navLinks = [];
+    for (let i = 0; i < linkNames.length; i++) {
+        let navText = linkNames[i];
+        let navQuery;
+        switch (navText) {
+            case 'Home':
+                navQuery = '';
+                break;
+            case "Men's Clothing":
+                navQuery = 'mens';
+                break;
+            case "Women's Clothing":
+                navQuery = 'womens';
+                break;
+            default:
+                navQuery = navText.toLowerCase();
+        }
+        navLinks.push(<li key={uniqid()}><NavLink to={navQuery}>{navText}</NavLink></li>);
+    }
 
     return (
         <nav>
-            links
+            <ul>
+                {navLinks}
+            </ul>
+            <Link to='cart'>Cart</Link>
         </nav>
     )
 };
-// Navigation.propTypes = {
-//     viewType: PropTypes.string.isRequired,
-// }
 
 export default Navigation;

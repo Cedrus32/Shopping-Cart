@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 import Navigation from './Navigation';
 import LandingView from './LandingView';
+import CategoryView from './CategoryView';
+import ItemView from './ItemView';
+import CartView from './CartView';
 
 const App = () => {
     return (
-        <main>
+        <>
             <Navigation />
-            <BrowserRouter>
-                <Routes>
-                    <Route path='/' element={<LandingView />} />
-                </Routes>
-            </BrowserRouter>
-        </main>
+            <Routes>
+                <Route path='/' element={<LandingView />} />
+                <Route path='/:category' element={<CategoryView />} />
+                <Route path='/:category/:item' element={<ItemView />} />
+                <Route path='/cart' element={<CartView />} />
+            </Routes>
+        </>
     )
 };
 
