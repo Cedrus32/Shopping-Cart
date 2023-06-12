@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import uniqid from 'uniqid';
 
 const Navigation = () => {
-    const linkNames = ['Home', "Men's Clothing", "Women's Clothing", 'Jewelry', 'Electronics'];
+    const linkNames = ['Home', "Men's Clothing", "Women's Clothing", 'Jewelery', 'Electronics'];
     let navLinks = [];
     for (let i = 0; i < linkNames.length; i++) {
         let navText = linkNames[i];
