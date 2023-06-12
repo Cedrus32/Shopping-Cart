@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const LandingView = () => {
     return (
-        <span>landing page</span>
+        <h1 data-testid='page-title'>Shop Odin merch!</h1>
     )
 }
 

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 const CartView = () => {
     return (
-        <span>cart</span>
+        <h1 data-testid='page-title'>Your Cart</h1>
     )
 }
 
