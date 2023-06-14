@@ -1,6 +1,7 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import uniqid from 'uniqid';
+import CartSummary from './CartSummary';
 
 const Navigation = () => {
     const linkNames = ['Home', "Men's Clothing", "Women's Clothing", 'Jewelery', 'Electronics'];
@@ -29,7 +30,7 @@ const Navigation = () => {
             <ul>
                 {navLinks}
             </ul>
-            <Link to='cart'>Cart</Link>
+            <CartSummary />
         </nav>
     )
 };
