@@ -1,0 +1,43 @@
+:root {
+    --light: #E1E2E3;
+    --lighter: #F0F1F2;
+    --lightest: #FCFEFF;
+    --dark: #181E25;
+    --nav: #2D4149;
+    --accent: #C7994C;
+}
+
+body {
+    background-color: var(--lighter);
+    color: var(--dark);
+}
+
+    nav {
+        background-color: var(--nav);
+    }
+
+        nav a {
+            color: var(--lighter);
+        }
+
+        .cart-summary {
+            background-color: var(--accent);
+            color: var(--lightest);
+        }
+
+    #page a {
+        color: var(--dark);
+    }
+
+        .decrement,
+        .increment {
+            background-color: var(--lighter)
+        }
+
+        input {
+            background-color: var(--lightest);
+        }
+
+        .add {
+            background-color: var(--accent)
+        }

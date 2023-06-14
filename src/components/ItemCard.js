@@ -1,10 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const ItemCard = (props) => {
-    const { category } = useParams();
     const { data } = props;
     console.log(data);
 

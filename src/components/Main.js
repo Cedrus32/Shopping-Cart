@@ -11,7 +11,7 @@ const App = () => {
     return (
         <>
             <Navigation />
-            <section data-testid='page'>
+            <section data-testid='page' id='page'>
                 <Routes>
                     <Route path='/' element={<LandingView />} />
                     <Route path='/:category' element={<CategoryView />} />
