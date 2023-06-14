@@ -11,12 +11,14 @@ const App = () => {
     return (
         <>
             <Navigation />
-            <Routes>
-                <Route path='/' element={<LandingView />} />
-                <Route path='/:category' element={<CategoryView />} />
-                <Route path='/:category/:item' element={<ItemView />} />
-                <Route path='/cart' element={<CartView />} />
-            </Routes>
+            <section data-testid='page'>
+                <Routes>
+                    <Route path='/' element={<LandingView />} />
+                    <Route path='/:category' element={<CategoryView />} />
+                    <Route path='/:category/:id' element={<ItemView />} />
+                    <Route path='/cart' element={<CartView />} />
+                </Routes>
+            </section>
         </>
     )
 };

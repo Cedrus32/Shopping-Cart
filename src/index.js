@@ -10,9 +10,7 @@ import './styles/style.css';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <Main />
-        </BrowserRouter>
-    </React.StrictMode>
+    <BrowserRouter>
+        <Main />
+    </BrowserRouter>
 );

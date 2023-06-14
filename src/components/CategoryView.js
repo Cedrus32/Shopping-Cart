@@ -1,8 +1,33 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import uniqid from 'uniqid';
+import ItemCard from './ItemCard';
 
 const CategoryView = () => {
     const { category } = useParams();
+    const fetched = useRef(null);
+    const [data, setData] = useState(
+        [
+            {
+                id:1,
+                title:'item 1',
+                price:100,
+                image:'imageURL'
+            },
+            {
+                id:2,
+                title:'item 2',
+                price:200,
+                image:'imageURl'
+            },
+            {
+                id:3,
+                title:'item 3',
+                price:300,
+                image:'imageURl'
+            },
+        ]
+    );
 
     function getPageTitle(value) {
         if (value === 'mens') {
@@ -17,9 +42,17 @@ const CategoryView = () => {
     }
 
     let pageTitle = getPageTitle(category);
+    let itemCards = [];
+    data.forEach(item => {
+        console.log(item);
+        itemCards.push(<ItemCard key={uniqid()} data={item} />);
+    });
 
     return (
-        <h1 data-testid='page-title'>{pageTitle}</h1>
+        <>
+            <h1 data-testid='page-title'>{pageTitle}</h1>
+            <section data-testid='page-content'>{itemCards}</section>
+        </>
     )
 }
 
