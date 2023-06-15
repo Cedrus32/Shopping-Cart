@@ -1,9 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import uniqid from 'uniqid';
 import CartSummary from './CartSummary';
 
 const Navigation = () => {
+    const navigate = useNavigate();
+
     const linkNames = ['Home', "Men's Clothing", "Women's Clothing", 'Jewelery', 'Electronics'];
     let navLinks = [];
     for (let i = 0; i < linkNames.length; i++) {
@@ -25,11 +27,19 @@ const Navigation = () => {
         navLinks.push(<li key={uniqid()}><NavLink to={navQuery}>{navText}</NavLink></li>);
     }
 
+    let back = '<<';
+    let forw = '>>';
+
+    // <NavLink to={'/'}>{back}</NavLink>
+    // <NavLink to={'/cart'}>{forw}</NavLink>
+
     return (
         <nav>
             <ul>
                 {navLinks}
             </ul>
+            <NavLink onClick={() => navigate(-1)}>{back}</NavLink>
+            <NavLink onClick={() => navigate(1)}>{forw}</NavLink>
             <CartSummary />
         </nav>
     )
