@@ -30,16 +30,13 @@ const Navigation = () => {
     let back = '<<';
     let forw = '>>';
 
-    // <NavLink to={'/'}>{back}</NavLink>
-    // <NavLink to={'/cart'}>{forw}</NavLink>
-
     return (
         <nav>
             <ul>
                 {navLinks}
             </ul>
-            <NavLink onClick={() => navigate(-1)}>{back}</NavLink>
-            <NavLink onClick={() => navigate(1)}>{forw}</NavLink>
+            <NavLink id='back' onClick={() => navigate(-1)}>{back}</NavLink>
+            <NavLink id='forward' onClick={() => navigate(1)}>{forw}</NavLink>
             <CartSummary />
         </nav>
     )

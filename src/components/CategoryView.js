@@ -44,14 +44,13 @@ const CategoryView = () => {
     let pageTitle = getPageTitle(category);
     let itemCards = [];
     data.forEach(item => {
-        console.log(item);
         itemCards.push(<ItemCard key={uniqid()} data={item} />);
     });
 
     return (
         <>
             <h1 data-testid='page-title'>{pageTitle}</h1>
-            <section data-testid='page-content'>{itemCards}</section>
+            <section id='content' className='category-view'>{itemCards}</section>
         </>
     )
 }

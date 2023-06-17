@@ -34,10 +34,10 @@ const CartView = () => {
     return (
         <>
             <h1 data-testid='page-title'>Your Cart</h1>
-            <section data-testid='page-content'>
-                <section>
+            <section id='content' className='cart-view'>
+                <div className='cart-list'>
                     {items}
-                </section>
+                </div>
                 <CartFooter />
             </section>
         </>

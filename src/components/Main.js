@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Navigation from './Navigation';
@@ -11,7 +11,7 @@ const App = () => {
     return (
         <>
             <Navigation />
-            <section data-testid='page' id='page'>
+            <section id='page'>
                 <Routes>
                     <Route path='/' element={<LandingView />} />
                     <Route path='/:category' element={<CategoryView />} />

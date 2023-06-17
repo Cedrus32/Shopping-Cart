@@ -10,7 +10,7 @@ const ItemCard = (props) => {
 
     return (
         <Link to={navQuery}>
-            <div data-testid='item-card'>
+            <div className='item-card'>
                 <img src={data.image} alt={data.title} />
                 <span>{data.title}</span>
                 <span>{data.price}</span>

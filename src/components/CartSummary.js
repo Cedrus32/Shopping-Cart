@@ -6,9 +6,7 @@ const CartSummary = () => {
 
     return (
         <Link to='/cart' className='cart-summary'>
-            <span>Cart</span>
             <span>[{count}]</span>
-            <span>subtotal</span>
         </Link>
     )
 }

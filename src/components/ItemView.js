@@ -20,10 +20,10 @@ const ItemView = () => {
     return (
         <>
             <h1 data-testid='page-title'>{pageTitle}</h1>
-            <section data-testid='page-content'>
+            <section id='content' className='item-view'>
                 <img src={data.image} alt={data.title} />
-                <p>{data.description}</p>
-                <div>
+                <p id='description'>{data.description}</p>
+                <div className='item-action'>
                     <Counter />
                     <AddButton />
                 </div>

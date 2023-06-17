@@ -1,0 +1,112 @@
+/* DISPLAY */
+
+main,
+.item-line {
+    display: grid;
+}
+
+#page,
+.category-view,
+.item-card,
+.item-view,
+.item-action,
+.cart-view,
+.cart-list,
+nav {
+    display: flex;
+}
+
+#page,
+.item-card,
+.item-view,
+.cart-view,
+.cart-list,
+#items-list {
+    flex-flow: column;
+}
+
+/* LAYOUTS */
+
+#page {
+    grid-area: page;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas: 'page'
+                             'nav';
+        height: inherit;
+        width: inherit;
+    }
+
+        #page {
+            overflow: auto;
+        }
+
+            #content {
+                width: 100%;
+            }
+
+                .category-view {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+                    .item-card {
+                        height: 300px;
+                        width: 300px;
+                    }
+
+                .item-line {
+                    grid-template-columns: auto 30vw 1fr auto;
+                    grid-template-rows: auto auto;
+                    grid-template-areas: 'remove image title price'
+                                        'remove image count subtotal';
+                }
+                
+                    .remove {
+                        grid-area: remove;
+                    }
+
+                    .item-line img {
+                        grid-area: image;
+                    }
+
+                    .title {
+                        grid-area: title;
+                    }
+
+                    .price {
+                        grid-area: price;
+                    }
+
+                    .item-line .item-counter {
+                        grid-area: count;
+                    }
+
+                    .subtotal {
+                        grid-area: subtotal;
+                    }
+
+        nav {
+            grid-area: nav;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+            #back {
+                margin-left: auto;
+            }
+
+            #forward {
+                margin-right: auto;
+            }
