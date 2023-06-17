@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import uniqid from 'uniqid';
-import ItemLine from './ItemLine';
-import CartFooter from './CartFooter';
+import ItemLine from '../components/ItemLine';
+import CartFooter from '../components/CartFooter';
 
 const CartView = () => {
     const testCart = [

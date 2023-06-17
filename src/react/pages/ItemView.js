@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Counter from './Counter';
-import AddButton from './AddButton';
+import Counter from '../components/Counter';
+import AddButton from '../components/AddButton';
 
 const ItemView = () => {
     const { category, id } = useParams();

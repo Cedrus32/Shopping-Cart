@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Navigation from './Navigation';
+import Navigation from '../components/Navigation';
 import LandingView from './LandingView';
 import CategoryView from './CategoryView';
 import ItemView from './ItemView';
