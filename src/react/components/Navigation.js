@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import uniqid from 'uniqid';
+
 import CartSummary from './CartSummary';
 
 const Navigation = () => {

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import uniqid from 'uniqid';
+
 import ItemCard from '../components/ItemCard';
 
 const CategoryView = () => {
