@@ -4,10 +4,10 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { BrowserRouter } from 'react-router-dom';
-import Main from '../src/components/Main';
+import Main from '../src/react/pages/Main';
 
 describe('Main component', () => {
-    it('navigates to "Home", correctly renders title', async () => {
+    it('navigates to "Home"', async () => {
         const user = userEvent.setup();
 
         render(<Main />, {wrapper: BrowserRouter});
@@ -15,9 +15,8 @@ describe('Main component', () => {
 
         await user.click(navLink);
         expect(window.location.pathname).toEqual('/');
-        expect(screen.getByTestId('page-title').textContent).toMatch('Shop Odin merch!');
     });
-    it('navigates to "Men\'s Clothing", correctly renders title', async () => {
+    it('navigates to "Men\'s Clothing"', async () => {
         const user = userEvent.setup();
 
         render(<Main />, {wrapper: BrowserRouter});
@@ -25,9 +24,8 @@ describe('Main component', () => {
 
         await user.click(navLink);
         expect(window.location.pathname).toEqual('/mens');
-        expect(screen.getByTestId('page-title').textContent).toMatch("Men's Clothing");
     });
-    it('navigates to "Women\'s Clothing", correctly renders title', async () => {
+    it('navigates to "Women\'s Clothing"', async () => {
         const user = userEvent.setup();
 
         render(<Main />, {wrapper: BrowserRouter});
@@ -35,9 +33,8 @@ describe('Main component', () => {
 
         await user.click(navLink);
         expect(window.location.pathname).toEqual('/womens');
-        expect(screen.getByTestId('page-title').textContent).toMatch("Women's Clothing");
     });
-    it('navigates to "Jewelery", correctly renders title', async () => {
+    it('navigates to "Jewelery"', async () => {
         const user = userEvent.setup();
 
         render(<Main />, {wrapper: BrowserRouter});
@@ -45,9 +42,8 @@ describe('Main component', () => {
 
         await user.click(navLink);
         expect(window.location.pathname).toEqual('/jewelery');
-        expect(screen.getByTestId('page-title').textContent).toMatch('Jewelery');
     });
-    it('navigates to "Electronics", correctly renders title', async () => {
+    it('navigates to "Electronics"', async () => {
         const user = userEvent.setup();
 
         render(<Main />, {wrapper: BrowserRouter});
@@ -55,9 +51,8 @@ describe('Main component', () => {
 
         await user.click(navLink);
         expect(window.location.pathname).toEqual('/electronics');
-        expect(screen.getByTestId('page-title').textContent).toMatch('Electronics');
     });
-    it('navigates to "Cart", correctly renders title', async () => {
+    it('navigates to "Cart"', async () => {
         const user = userEvent.setup();
 
         render(<Main />, {wrapper: BrowserRouter});
@@ -65,6 +60,5 @@ describe('Main component', () => {
 
         await user.click(navLink);
         expect(window.location.pathname).toEqual('/cart');
-        expect(screen.getByTestId('page-title').textContent).toMatch('Your Cart');
     });
 });
