@@ -5,9 +5,10 @@ const CartSummary = () => {
     let count = 3;
 
     return (
-        <Link to='/cart' className='cart-summary'>
-            <span>[{count}]</span>
-        </Link>
+        <div role='cart-summary' className='cart-summary'>
+            <Link to='/cart'>Cart</Link>
+            <span role='item-count'>{count}</span>
+        </div>
     )
 }
 
