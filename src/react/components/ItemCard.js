@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 
 const ItemCard = (props) => {
     const { data } = props;
-    console.log(data);
-
     let navQuery = `${data.id}`;
 
     return (
         <Link to={navQuery}>
-            <div className='item-card'>
+            <div className='item-card' data-testid={`item-card-${data.id}`}>
                 <img src={data.image} alt={data.title} />
                 <span>{data.title}</span>
                 <span>{data.price}</span>
