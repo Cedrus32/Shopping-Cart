@@ -12,7 +12,8 @@ main,
 .item-action,
 .cart-view,
 .cart-list,
-nav {
+nav,
+.cart-summary {
     display: flex;
 }
 
@@ -21,7 +22,8 @@ nav {
 .item-view,
 .cart-view,
 .cart-list,
-#items-list {
+#items-list,
+.cart-summary {
     flex-flow: column;
 }
 
