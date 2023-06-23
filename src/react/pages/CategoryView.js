@@ -8,7 +8,6 @@ import ItemCard from '../components/ItemCard';
 const CategoryView = (props) => {
     const { category } = useParams();
     const { updateView } = props;
-    console.log(updateView);
     const [query, setQuery] = useState(
         [
             {
@@ -37,7 +36,6 @@ const CategoryView = (props) => {
 
     function handleClick(e) {
         if (e.target.parentElement.role === 'article') {
-            console.log(e.target.parentElement.dataset.id);
             updateView(e.target.parentElement.dataset.id);
         }
     }

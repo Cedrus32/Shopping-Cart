@@ -6,7 +6,6 @@ const ItemCard = (props) => {
     const navigate = useNavigate();
     const { data } = props;
     let navQuery = `${data.id}`;
-    console.log(navQuery);
 
     return (
         <article role='article' className='item-card' data-id={data.id} onClick={() => navigate(navQuery)}>
