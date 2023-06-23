@@ -2,30 +2,37 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Counter from '../components/Counter';
 import AddButton from '../components/AddButton';
+import RemoveButton from '../components/RemoveButton';
 
 const ItemView = () => {
     const { category, id } = useParams();
     const data = {
-        id:1,
-        title:'item 1',
-        price:100,
-        category: 'category',
+        id: 1,
+        title: 'item 1',
         description: 'description',
-        image:'imageURL'
+        price: 100,
+        count: 1,
+        image: 'imageURL'
     };
-    
+    let counter;
+    let button;
 
-    let pageTitle = data.title;
+    if (data.count === 0) {
+        button = <AddButton />;
+    } else {
+        counter = <Counter />;
+        button = <RemoveButton />;
+    }
 
     return (
         <>
-            <h1 data-testid='page-title'>{pageTitle}</h1>
+            <h1 data-testid='page-title'>{data.title}</h1>
             <section id='content' className='item-view'>
                 <img src={data.image} alt={data.title} />
                 <p id='description'>{data.description}</p>
                 <div className='item-action'>
-                    <Counter />
-                    <AddButton />
+                    {counter}
+                    {button}
                 </div>
             </section>
         </>
