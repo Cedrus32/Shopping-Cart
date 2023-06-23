@@ -29,7 +29,7 @@ const App = () => {
             <section id='page'>
                 <Routes>
                     <Route path='/' element={<LandingView />} />
-                    <Route path='/:category' element={<CategoryView />} />
+                    <Route path='/:category' element={<CategoryView updateView={updateView}/>} />
                     <Route path='/:category/:id' element={<ItemView />} />
                     <Route path='/cart' element={<CartView />} />
                 </Routes>
