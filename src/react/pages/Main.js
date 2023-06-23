@@ -31,6 +31,7 @@ const App = () => {
         return sum;
     }
     function getItem(query) {
+        console.log(query);
         return cart.find(item => item.id === query);
     }
     // state queriers
@@ -42,7 +43,7 @@ const App = () => {
                 <Routes>
                     <Route path='/' element={<LandingView />} />
                     <Route path='/:category' element={<CategoryView updateView={updateView} />} />
-                    <Route path='/:category/:id' element={<ItemView getItem={getItem} view={view} />} />
+                    <Route path='/:category/:id' element={<ItemView cartItem={getItem(view)} />} />
                     <Route path='/cart' element={<CartView />} />
                 </Routes>
             </section>

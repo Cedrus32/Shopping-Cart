@@ -9,7 +9,7 @@ import RemoveButton from '../components/RemoveButton';
 const ItemView = (props) => {
     const [ query, setQuery ] = useState(null);
     const { category, id } = useParams(); // NOTE: used for API call
-    const { getItem, view, addItem, removeItem, updateItem } = props;
+    const { cartItem, addItem, removeItem, updateItem } = props;
     let data = {
         id: null,
         title: null,
@@ -29,14 +29,16 @@ const ItemView = (props) => {
     let counter;
     let button;
 
-    data = getItem(view);
-    if (data) {
+    data = cartItem;
+    if (cartItem) {
         counter = <Counter />;
         button = <RemoveButton />;
     } else {
         data = mockFetch;
         button = <AddButton />;
     }
+
+    // add unmount effect -> clear view in main state, clear API calls
 
     return (
         <>
@@ -53,8 +55,7 @@ const ItemView = (props) => {
     )
 };
 ItemView.propTypes = {
-    getItem: PropTypes.func,
-    view: PropTypes.number,
+    cartItem: PropTypes.object,
     addItem: PropTypes.func,
     removeItem: PropTypes.func,
     updateItem: PropTypes.func,
