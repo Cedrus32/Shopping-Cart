@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Navigation from '../components/Navigation';
@@ -8,9 +8,24 @@ import ItemView from './ItemView';
 import CartView from './CartView';
 
 const App = () => {
+    const [ cart, setCart ] = useState([]);
+    const [ view, setView ] = useState(null);
+
+    // state setters
+    function updateView(value) {
+        setView(value);
+    }
+    // state getters
+    function getCount() {
+        let sum = 0;
+        cart.forEach(item => sum += item.count);
+        return sum;
+    }
+    // state queriers
+
     return (
         <>
-            <Navigation />
+            <Navigation count={getCount()}/>
             <section id='page'>
                 <Routes>
                     <Route path='/' element={<LandingView />} />

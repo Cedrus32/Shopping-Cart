@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import LinkList from './LinkList.js';
 import CartSummary from './CartSummary';
 
-const Navigation = () => {
+const Navigation = (props) => {
+    const { count } = props;
     const navigate = useNavigate();
 
     let back = '<<';
@@ -15,9 +17,12 @@ const Navigation = () => {
             <LinkList />
             <NavLink id='back' onClick={() => navigate(-1)}>{back}</NavLink>
             <NavLink id='forward' onClick={() => navigate(1)}>{forw}</NavLink>
-            <CartSummary />
+            <CartSummary count={count}/>
         </nav>
     )
 };
+Navigation.propTypes = {
+    count: PropTypes.number,
+}
 
 export default Navigation;
