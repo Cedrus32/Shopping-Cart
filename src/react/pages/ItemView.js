@@ -19,10 +19,10 @@ const ItemView = (props) => {
         image: null,
     };
     const mockFetch = { // TEST: replace with API fetch
-        id: 2,
-        title: 'item 2',
+        id: 1,
+        title: 'item 1',
         description: 'description',
-        price: 200,
+        price: 100,
         count: 0,
         image: 'imageURL'
     };
@@ -35,7 +35,7 @@ const ItemView = (props) => {
         button = <RemoveButton />;
     } else {
         data = mockFetch;
-        button = <AddButton />;
+        button = <AddButton addItem={addItem} data={data} />;
     }
 
     // add unmount effect -> clear view in main state, clear API calls
