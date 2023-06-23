@@ -37,6 +37,10 @@ const App = () => {
             }
         ]);
     }
+    function removeItem(query) {
+        // console.log(query);
+        setCart(cart.filter(item => item.id !== query));
+    }
     // state getters
     function getCount(data) {
         console.log(data)
@@ -55,7 +59,7 @@ const App = () => {
                 <Routes>
                     <Route path='/' element={<LandingView />} />
                     <Route path='/:category' element={<CategoryView updateView={updateView} />} />
-                    <Route path='/:category/:id' element={<ItemView cartItem={getItem(view)} addItem={addItem} />} />
+                    <Route path='/:category/:id' element={<ItemView cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} />} />
                     <Route path='/cart' element={<CartView />} />
                 </Routes>
             </section>
