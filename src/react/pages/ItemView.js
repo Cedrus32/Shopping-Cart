@@ -1,12 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+
 import Counter from '../components/Counter';
 import AddButton from '../components/AddButton';
 import RemoveButton from '../components/RemoveButton';
 
 const ItemView = () => {
-    const { category, id } = useParams();
-    const data = {
+    const { category, id } = useParams(); // NOTE: used for API call
+    const data = { // TEST: make state, replace with API fetch or state query
         id: 1,
         title: 'item 1',
         description: 'description',
