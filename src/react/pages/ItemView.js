@@ -31,7 +31,7 @@ const ItemView = (props) => {
 
     data = cartItem;
     if (cartItem) {
-        counter = <Counter />;
+        counter = <Counter count={cartItem.count}/>;
         button = <RemoveButton />;
     } else {
         data = mockFetch;
