@@ -41,6 +41,19 @@ const App = () => {
         // console.log(query);
         setCart(cart.filter(item => item.id !== query));
     }
+    function updateItem(query, action) {
+        console.log(query, action);
+        let index = cart.findIndex(item => item.id === query);
+        let item = cart[index];
+        if (action === 'increment') {
+            item.count += 1;
+        } else {
+            item.count -= 1;
+        }
+        let cartCopy = cart;
+        cartCopy.splice(index, 1, item);
+        setCart([...cartCopy]);
+    }
     // state getters
     function getCount(data) {
         console.log(data)
@@ -59,7 +72,7 @@ const App = () => {
                 <Routes>
                     <Route path='/' element={<LandingView />} />
                     <Route path='/:category' element={<CategoryView updateView={updateView} />} />
-                    <Route path='/:category/:id' element={<ItemView cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} />} />
+                    <Route path='/:category/:id' element={<ItemView cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
                     <Route path='/cart' element={<CartView />} />
                 </Routes>
             </section>
