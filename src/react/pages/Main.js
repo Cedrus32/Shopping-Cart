@@ -47,7 +47,7 @@ const App = () => {
         let item = cart[index];
         if (action === 'increment') {
             item.count += 1;
-        } else {
+        } else if (action === 'decrement' && item.count > 1) {
             item.count -= 1;
         }
         let cartCopy = cart;
