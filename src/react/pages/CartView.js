@@ -14,9 +14,7 @@ const CartView = (props) => {
     function alertCheckout() {
         let string = '~~ Your Order ~~ \n';
         cart.forEach(item => {
-            console.log(item);
             string = string.concat(`${item.title}: $${item.price} x ${item.count} = ${item.price * item.count} \n`);
-            console.log(string);
         });
         string = string.concat(`~~ Your Total: ${total} ~~`);
         alert(string);
