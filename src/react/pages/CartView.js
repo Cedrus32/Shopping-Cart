@@ -8,13 +8,24 @@ import CartFooter from '../components/CartFooter';
 
 const CartView = (props) => {
     const { cart, removeItem, updateItem } = props;
-
     let items = [];
     let total = 0;
+
+    function alertCheckout() {
+        let string = '~~ Your Order ~~ \n';
+        cart.forEach(item => {
+            console.log(item);
+            string = string.concat(`${item.title}: $${item.price} x ${item.count} = ${item.price * item.count} \n`);
+            console.log(string);
+        });
+        string = string.concat(`~~ Your Total: ${total} ~~`);
+        alert(string);
+    }
+
     cart.forEach(item => {
         items.push(<ItemLine key={uniqid()} data={item} removeItem={removeItem} updateItem={updateItem} />);
         total += (item.price * item.count);
-    })
+    });
 
     return (
         <>
@@ -23,7 +34,7 @@ const CartView = (props) => {
                 <div className='cart-list'>
                     {items}
                 </div>
-                <CartFooter cartTotal={total}/>
+                <CartFooter cartTotal={total} alertCheckout={alertCheckout} />
             </section>
         </>
     )
