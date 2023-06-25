@@ -10,8 +10,10 @@ const CartView = (props) => {
     const { cart, removeItem, updateItem } = props;
 
     let items = [];
+    let total = 0;
     cart.forEach(item => {
         items.push(<ItemLine key={uniqid()} data={item} removeItem={removeItem} updateItem={updateItem} />);
+        total += (item.price * item.count);
     })
 
     return (
@@ -21,7 +23,7 @@ const CartView = (props) => {
                 <div className='cart-list'>
                     {items}
                 </div>
-                <CartFooter />
+                <CartFooter cartTotal={total}/>
             </section>
         </>
     )
