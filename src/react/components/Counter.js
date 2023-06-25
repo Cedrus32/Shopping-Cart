@@ -5,7 +5,6 @@ const Counter = (props) => {
     const { updateItem, id, count } = props;
 
     function handleChange(e) {
-        console.log(e);
         let action;
         let value;
         if (e.key === 'Backspace') {
