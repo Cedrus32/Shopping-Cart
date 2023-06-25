@@ -8,26 +8,6 @@ import CartFooter from '../components/CartFooter';
 
 const CartView = (props) => {
     const { cart, removeItem, updateItem } = props;
-    // const testCart = [
-    //     {
-    //         title: 'item 1',
-    //         price: 100,
-    //         count: 3,
-    //         image: 'imgURL',
-    //     },
-    //     {
-    //         title: 'item 2',
-    //         price: 50,
-    //         count: 1,
-    //         image: 'imgURL',
-    //     },
-    //     {
-    //         title: 'item 3',
-    //         price: 750,
-    //         count: 2,
-    //         image: 'imgURL',
-    //     },
-    // ];
 
     let items = [];
     cart.forEach(item => {
