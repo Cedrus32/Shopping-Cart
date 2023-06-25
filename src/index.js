@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
-import Main from './react/pages/Main'
+import Main from './pages/Main'
 
 import './styles/reset.css';
 import './styles/layout.css';
