@@ -5,9 +5,8 @@ import uniqid from 'uniqid';
 
 import ItemCard from '../components/ItemCard';
 
-const CategoryView = (props) => {
+const CategoryView = () => {
     const { category } = useParams();
-    const { updateView } = props;
     const [query, setQuery] = useState(
         [
             {
@@ -34,12 +33,6 @@ const CategoryView = (props) => {
         ]
     );
 
-    function handleClick(e) {
-        if (e.target.parentElement.role === 'article') {
-            updateView(e.target.parentElement.dataset.id);
-        }
-    }
-
     function getPageTitle(value) {
         if (value === 'mens') {
             return "Men's Clothing";
@@ -61,12 +54,9 @@ const CategoryView = (props) => {
     return (
         <>
             <h1 data-testid='page-title'>{pageTitle}</h1>
-            <section id='content' className='category-view' onClick={handleClick}>{itemCards}</section>
+            <section id='content' className='category-view'>{itemCards}</section>
         </>
     )
 };
-CategoryView.propTypes = {
-    updateView: PropTypes.func,
-}
 
 export default CategoryView;

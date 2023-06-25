@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,8 @@ import RemoveButton from '../components/RemoveButton';
 const ItemView = (props) => {
     const [ query, setQuery ] = useState(null);
     const { category, id } = useParams(); // NOTE: used for API call
-    const { cartItem, addItem, removeItem, updateItem } = props;
+    console.log(category, id);
+    const { updateView, cartItem, addItem, removeItem, updateItem } = props;
     let data = {
         id: null,
         title: null,
@@ -19,15 +20,19 @@ const ItemView = (props) => {
         image: null,
     };
     const mockFetch = { // TEST: replace with API fetch
-        id: 1,
-        title: 'item 1',
+        id: parseInt(id),
+        title: `item ${id}`,
         description: 'description',
-        price: 100,
+        price: 100 * parseInt(id),
         count: 0,
         image: 'imageURL'
     };
     let counter;
     let button;
+
+    useEffect(() => {
+        updateView(id);
+    }, [])
 
     data = cartItem;
     if (cartItem) {
@@ -55,6 +60,7 @@ const ItemView = (props) => {
     )
 };
 ItemView.propTypes = {
+    updateView: PropTypes.func,
     cartItem: PropTypes.object,
     addItem: PropTypes.func,
     removeItem: PropTypes.func,
