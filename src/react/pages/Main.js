@@ -72,7 +72,7 @@ const App = () => {
                     <Route path='/' element={<LandingView />} />
                     <Route path='/:category' element={<CategoryView />} />
                     <Route path='/:category/:id' element={<ItemView updateView={updateView} cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
-                    <Route path='/cart' element={<CartView />} />
+                    <Route path='/cart' element={<CartView cart={cart} removeItem={removeItem} updateItem={updateItem} />} />
                 </Routes>
             </section>
         </>

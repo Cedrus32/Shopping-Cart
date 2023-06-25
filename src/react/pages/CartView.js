@@ -1,35 +1,37 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
 
 import ItemLine from '../components/ItemLine';
 import CartFooter from '../components/CartFooter';
 
-const CartView = () => {
-    const testCart = [
-        {
-            title: 'item 1',
-            price: 100,
-            count: 3,
-            image: 'imgURL',
-        },
-        {
-            title: 'item 2',
-            price: 50,
-            count: 1,
-            image: 'imgURL',
-        },
-        {
-            title: 'item 3',
-            price: 750,
-            count: 2,
-            image: 'imgURL',
-        },
-    ];
+const CartView = (props) => {
+    const { cart, removeItem, updateItem } = props;
+    // const testCart = [
+    //     {
+    //         title: 'item 1',
+    //         price: 100,
+    //         count: 3,
+    //         image: 'imgURL',
+    //     },
+    //     {
+    //         title: 'item 2',
+    //         price: 50,
+    //         count: 1,
+    //         image: 'imgURL',
+    //     },
+    //     {
+    //         title: 'item 3',
+    //         price: 750,
+    //         count: 2,
+    //         image: 'imgURL',
+    //     },
+    // ];
 
     let items = [];
-    testCart.forEach(item => {
-        items.push(<ItemLine key={uniqid()} data={item} />);
+    cart.forEach(item => {
+        items.push(<ItemLine key={uniqid()} data={item} removeItem={removeItem} updateItem={updateItem} />);
     })
 
     return (
@@ -43,6 +45,11 @@ const CartView = () => {
             </section>
         </>
     )
+};
+CartView.propTypes = {
+    cart: PropTypes.array,
+    removeItem: PropTypes.func,
+    updateItem: PropTypes.func,
 }
 
 export default CartView;
