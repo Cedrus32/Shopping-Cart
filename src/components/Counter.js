@@ -25,7 +25,6 @@ const Counter = (props) => {
     }
 
     // TODO: style input validation
-    // TODO: add validation check on change -- if not divisible by 1 (is decimal), flag as invalid
 
     return (
         <div className='item-counter'>

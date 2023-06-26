@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -7,7 +7,6 @@ import AddButton from '../components/AddButton';
 import RemoveButton from '../components/RemoveButton';
 
 const ItemView = (props) => {
-    const [ query, setQuery ] = useState(null);
     const { category, id } = useParams(); // NOTE: used for API call
     const { updateView, cartItem, addItem, removeItem, updateItem } = props;
     let data = {

@@ -42,11 +42,11 @@ const Main = (props) => {
             ...cart,
             item
         ]);
-        if (storagePulled) { // NOTE: WORKING
+        if (storagePulled) {
             localStorage.setItem(data.id, JSON.stringify(item))
         }
     }
-    function removeItem(query) { // NOTE: WORKING
+    function removeItem(query) {
         setCart(cart.filter(item => item.id !== query));
         if (storagePulled) {
             localStorage.removeItem(query);
@@ -65,7 +65,6 @@ const Main = (props) => {
         let cartCopy = cart;
         cartCopy.splice(index, 1, item);
         setCart([...cartCopy]);
-        // update localStorage
         if (storagePulled) {
             localStorage.setItem(query, JSON.stringify(item));
         }
