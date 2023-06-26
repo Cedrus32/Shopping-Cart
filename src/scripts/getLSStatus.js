@@ -1,4 +1,4 @@
-const getCartContext = () => {
+const getLSStatus = () => {
     function available(type) {
         let storage;
         try {
@@ -27,9 +27,9 @@ const getCartContext = () => {
     }
 
     if (available('localStorage')) {
-        return 'storage';
+        return true;
     }
-    return 'state';
+    return false;
 };
 
-export default getCartContext;
+export default getLSStatus;

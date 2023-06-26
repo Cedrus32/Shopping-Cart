@@ -9,13 +9,13 @@ import ItemView from './ItemView';
 import CartView from './CartView';
 
 const Main = (props) => {
-    const { cartContext } = props;
+    const { storageStatus } = props;
     const [ cart, setCart ] = useState([]);
     const [ storagePulled, setStoragePulled ] = useState(false);
     const [ view, setView ] = useState(null);
 
     useEffect(() => {
-        if (cartContext === 'storage') {
+        if (storageStatus === true) {
             let items = [];
             for (let i = 0; i < localStorage.length; i++) {
                 items.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
@@ -94,7 +94,7 @@ const Main = (props) => {
     )
 };
 Main.propTypes = {
-    cartContext: PropTypes.string,
+    storageStatus: PropTypes.bool,
 }
 
 export default Main;
