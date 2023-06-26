@@ -15,25 +15,10 @@ const Main = (props) => {
     const [ view, setView ] = useState(null);
 
     useEffect(() => {
-        // localStorage.clear();
-        let testIDs = [1, 2, 3, 4, 5];
-        testIDs.forEach(id => {
-            localStorage.setItem(`${id}`, JSON.stringify(
-                {
-                    id: id,
-                    title: `item ${id}`,
-                    description: 'description',
-                    price: (100 * id),
-                    count: id,
-                    image: 'imageURL',
-                }
-            ))
-        });
-        if (cartContext === 'storage' && localStorage.length > 0) {
+        if (cartContext === 'storage') {
             let items = [];
             for (let i = 0; i < localStorage.length; i++) {
-                let key = localStorage.key(i);
-                items.push(JSON.parse(localStorage.getItem(key)));
+                items.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
             }
             setCart(items);
             setStoragePulled(true);
@@ -45,22 +30,27 @@ const Main = (props) => {
         setView(parseInt(value));
     }
     function addItem(data) {
+        let item = {
+            id: data.id,
+            title: data.title,
+            description: data.description,
+            price: data.price,
+            count: data.count + 1,
+            image: data.image,
+        }
         setCart([
             ...cart,
-            {
-                id: data.id,
-                title: data.title,
-                description: data.description,
-                price: data.price,
-                count: data.count + 1,
-                image: data.image,
-            }
+            item
         ]);
-        // update localStorage
+        if (storagePulled) { // NOTE: WORKING
+            localStorage.setItem(data.id, JSON.stringify(item))
+        }
     }
-    function removeItem(query) {
+    function removeItem(query) { // NOTE: WORKING
         setCart(cart.filter(item => item.id !== query));
-        // update localStorage
+        if (storagePulled) {
+            localStorage.removeItem(query);
+        }
     }
     function updateItem(query, action, value) {
         let index = cart.findIndex(item => item.id === query);
@@ -76,6 +66,9 @@ const Main = (props) => {
         cartCopy.splice(index, 1, item);
         setCart([...cartCopy]);
         // update localStorage
+        if (storagePulled) {
+            localStorage.setItem(query, JSON.stringify(item));
+        }
     }
     // state getters
     function getCount(data) {
