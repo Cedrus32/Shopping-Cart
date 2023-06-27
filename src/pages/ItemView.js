@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import useItem from '../hooks/useItem';
+
 import Counter from '../components/Counter';
 import AddButton from '../components/AddButton';
 import RemoveButton from '../components/RemoveButton';
@@ -9,35 +11,14 @@ import RemoveButton from '../components/RemoveButton';
 const ItemView = (props) => {
     const { category, id } = useParams(); // NOTE: used for API call
     const { updateView, cartItem, addItem, removeItem, updateItem } = props;
-    let data = {
-        id: null,
-        title: null,
-        description: null,
-        price: null,
-        count: null,
-        image: null,
-    };
-    const mockFetch = { // TEST: replace with API fetch
-        id: parseInt(id),
-        title: `item ${id}`,
-        description: 'description',
-        price: 100 * parseInt(id),
-        count: 0,
-        image: 'imageURL'
-    };
+    const { exists, data } = useItem({updateView: updateView, id: id, cartItem: cartItem});
     let counter;
     let button;
 
-    useEffect(() => {
-        updateView(id);
-    }, [])
-
-    data = cartItem;
-    if (cartItem) {
+    if (exists) {
         counter = <Counter updateItem={updateItem} id={data.id} count={data.count} />;
         button = <RemoveButton removeItem={removeItem} id={data.id} />;
     } else {
-        data = mockFetch;
         button = <AddButton addItem={addItem} data={data} />;
     }
 
