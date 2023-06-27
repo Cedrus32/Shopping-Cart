@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import useItem from '../hooks/useItem';
+import useQuery from '../hooks/useQuery';
 
 import Counter from '../components/Counter';
 import AddButton from '../components/AddButton';
@@ -11,7 +11,7 @@ import RemoveButton from '../components/RemoveButton';
 const ItemView = (props) => {
     const { category, id } = useParams(); // NOTE: used for API call
     const { updateView, cartItem, addItem, removeItem, updateItem } = props;
-    const { exists, data } = useItem({updateView: updateView, id: id, cartItem: cartItem});
+    const { exists, data } = useQuery({updateView: updateView, id: id, cartItem: cartItem});
     let counter;
     let button;
 
