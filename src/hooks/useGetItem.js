@@ -20,9 +20,9 @@ const useGetItem = (props) => {
     };
 
     useEffect(() => {
-        updateView(id);
+        updateView({type: 'set', value: id});
         return () => {
-            updateView(null);
+            updateView({type: 'reset', value: null});
         }
     }, []);
 
