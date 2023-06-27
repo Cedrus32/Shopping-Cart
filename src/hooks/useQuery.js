@@ -35,14 +35,6 @@ const useQuery = (props) => {
         data = mockFetch;
     }
 
-    useEffect(() => {
-        return () => {
-            console.log('WILL UNMOUNT')
-            // updateView(null);
-            // clear API calls
-        }
-    });
-
     return {
         exists,
         data,
