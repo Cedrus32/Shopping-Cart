@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-// TODO: move storageStatus into context (set and save prior to Main mount)
-
 const useCart = (props) => {
     const storageStatus = props;
 
