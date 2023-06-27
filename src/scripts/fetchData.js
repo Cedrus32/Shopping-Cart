@@ -1,13 +1,18 @@
-async function fetchItems(values) {
-    let response;
-    if (values[1]) {
-        response = await fetch(`${values[0]}${values[1]}`, {mode: 'cors'});
+function getPath(obj) {
+    if (obj.type === 'category') {
+        return `https://fakestoreapi.com/products/category/${obj.value}`;
     } else {
-        response = await fetch(`${values[0]}`, {mode: 'cors'});
+        return `https://fakestoreapi.com/products/${obj.value}`;
     }
-    let data = await response.json();
+}
 
-    return data;
+async function fetchItems(fetchObj) {
+    const path = getPath(fetchObj);
+    const response = await fetch(path, {mode: 'cors'});
+    let string = await response.json();
+    let data = JSON.parse(string);
+    console.log(data);
+    // return data;
 }
 
 export default fetchItems;
