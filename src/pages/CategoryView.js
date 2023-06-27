@@ -1,37 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
+
+import useGetCat from '../hooks/useGetCat';
 
 import ItemCard from '../components/ItemCard';
 
 const CategoryView = () => {
     const { category } = useParams();
-    const [query, setQuery] = useState(
-        [
-            {
-                id:1,
-                category: 'mens',
-                title:'item 1',
-                price:100,
-                image:'imageURL'
-            },
-            {
-                id:2,
-                category: 'mens',
-                title:'item 2',
-                price:200,
-                image:'imageURl'
-            },
-            {
-                id:3,
-                category: 'mens',
-                title:'item 3',
-                price:300,
-                image:'imageURl'
-            },
-        ]
-    );
+    const { data } = useGetCat(category);
 
     function getPageTitle(value) {
         if (value === 'mens') {
@@ -47,7 +24,7 @@ const CategoryView = () => {
 
     let pageTitle = getPageTitle(category);
     let itemCards = [];
-    query.forEach(item => {
+    data.forEach(item => {
         itemCards.push(<ItemCard key={uniqid()} data={item} />);
     });
 

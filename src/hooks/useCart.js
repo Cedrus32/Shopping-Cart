@@ -20,8 +20,12 @@ const useCart = (props) => {
     }, []);
 
     // state setters
-    function updateView(value) {
-        setView(parseInt(value));
+    function updateView(viewObj) {
+        if (viewObj.type === 'set') {
+            setView(parseInt(viewObj.value));
+        } else {
+            setView(viewObj.value);
+        }
     }
     function addItem(data) {
         let item = {
@@ -75,6 +79,7 @@ const useCart = (props) => {
     function getItem(query) {
         return cart.find(item => item.id === query);
     }
+
     return {
         cart,
         view,
