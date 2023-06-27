@@ -1,3 +1,5 @@
+import fetchData from '../scripts/fetchData';
+
 const useGetCat = (props) => {
     const category = props;
     let data = [];
@@ -20,10 +22,10 @@ const useGetCat = (props) => {
             price: 300,
             image: 'imageURL',
         },
-    ]
+    ];
 
-    // fetch data with category
     data = mockFetch;
+    // data = fetchData(category);
 
     return {
         data,
