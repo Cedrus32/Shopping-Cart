@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const useQuery = (props) => {
+const useGetItem = (props) => {
     const { updateView, id, cartItem } = props;
     let data = {
         id: null,
@@ -41,4 +41,4 @@ const useQuery = (props) => {
     }
 };
 
-export default useQuery;
+export default useGetItem;
