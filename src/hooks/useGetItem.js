@@ -18,6 +18,7 @@ const useGetItem = (props) => {
         count: 0,
         image: 'imageURL'
     };
+    let exists;
 
     useEffect(() => {
         updateView({type: 'set', value: id});
@@ -26,13 +27,13 @@ const useGetItem = (props) => {
         }
     }, []);
 
-    let exists;
     if (cartItem) {
         exists = true;
         data = cartItem;
     } else {
         exists = false;
         data = mockFetch;
+        // data = fetchData(id);
     }
 
     return {
