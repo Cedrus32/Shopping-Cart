@@ -22,8 +22,6 @@ const ItemView = (props) => {
         button = <AddButton addItem={addItem} data={data} />;
     }
 
-    // add unmount effect -> clear view in main state, clear API calls
-
     return (
         <>
             <h1 data-testid='page-title'>{data.title}</h1>

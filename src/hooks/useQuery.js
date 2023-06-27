@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const useItem = (props) => {
+const useQuery = (props) => {
     const { updateView, id, cartItem } = props;
     let data = {
         id: null,
@@ -21,6 +21,9 @@ const useItem = (props) => {
 
     useEffect(() => {
         updateView(id);
+        return () => {
+            updateView(null);
+        }
     }, []);
 
     let exists;
@@ -32,10 +35,18 @@ const useItem = (props) => {
         data = mockFetch;
     }
 
+    useEffect(() => {
+        return () => {
+            console.log('WILL UNMOUNT')
+            // updateView(null);
+            // clear API calls
+        }
+    });
+
     return {
         exists,
         data,
     }
 };
 
-export default useItem;
+export default useQuery;
