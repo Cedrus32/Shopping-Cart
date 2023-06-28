@@ -7,12 +7,15 @@ function getPath(obj) {
 }
 
 async function fetchData(fetchObj) {
-    const path = getPath(fetchObj);
-    const response = await fetch(path, {mode: 'cors'});
-    let string = await response.json();
-    let data = JSON.parse(string);
-    // console.log(data);
-    return data;
+    try {
+        const path = getPath(fetchObj);
+        const response = await fetch(path);
+        const data = await response.json();
+        return await data;
+    } catch(e) {
+        return e;
+    }
 }
 
-export default getPath;
+// export { getPath, fetchData }; // TEST: exports for fetch testing
+export default fetchData;
