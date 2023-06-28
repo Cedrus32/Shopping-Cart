@@ -10,6 +10,7 @@ import RemoveButton from '../components/RemoveButton';
 
 const ItemView = (props) => {
     const { category, id } = useParams(); // NOTE: used for API call
+
     const { updateView, cartItem, addItem, removeItem, updateItem } = props;
     const { exists, data } = useGetItem({updateView: updateView, id: id, cartItem: cartItem});
     let counter;

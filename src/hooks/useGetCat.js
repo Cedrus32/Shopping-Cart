@@ -6,10 +6,9 @@ const useGetCat = (props) => {
     const category = props;
     const catRef = useRef(null);
     const [ data, setData ] = useState([]);
-    // let data = [];
     let mockFetch = [];
 
-    console.log(catRef.current, category);
+    // console.log(catRef.current, category);
 
     if (catRef.current !== category) {
         catRef.current = category;
@@ -43,9 +42,6 @@ const useGetCat = (props) => {
             console.log(catRef.current);
         }
     }, [])
-
-    // data = mockFetch;
-    // data = fetchData(category);
 
     return {
         data,
