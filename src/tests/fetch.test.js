@@ -1,4 +1,4 @@
-import { default as getPath, fetchData } from '../src/scripts/fetchData';
+import { getPath, fetchData } from '../src/scripts/fetchData';
 console.log(getPath);
 
 describe('getPath script', () => {

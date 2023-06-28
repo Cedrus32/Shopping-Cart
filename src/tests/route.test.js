@@ -4,8 +4,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { BrowserRouter } from 'react-router-dom';
-import Main from '../src/react/pages/Main';
-import CategoryView from '../src/react/pages/CategoryView';
+import Main from '../pages/Main';
+import CategoryView from '../pages/CategoryView';
 
 describe('Main component', () => {
     it('navigates to "Home"', async () => {
@@ -69,7 +69,7 @@ describe('CategoryView component', () => {
         const user = userEvent.setup();
 
         render(<CategoryView />, {wrapper: BrowserRouter});
-        const itemCard = screen.getByTestId('item-card-1');
+        const itemCard = screen.getByTestId('1');
 
         await user.click(itemCard);
         expect(window.location.pathname).toEqual('/1');
