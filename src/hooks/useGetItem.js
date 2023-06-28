@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+// import fetchData from '../scripts/fetchData';
+
 const useGetItem = (props) => {
     const { updateView, id, cartItem } = props;
     let data = {
@@ -21,7 +23,7 @@ const useGetItem = (props) => {
     let exists;
 
     useEffect(() => {
-        updateView({type: 'set', value: id});
+        updateView({type: 'id', value: id});
         return () => {
             updateView({type: 'reset', value: null});
         }

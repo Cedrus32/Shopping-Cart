@@ -20,7 +20,7 @@ const Main = (props) => {
         removeItem,
         updateItem,
         getCount,
-        getItem
+        getItem,
     } = useCart(storageStatus);
 
     return (

@@ -21,7 +21,7 @@ const useCart = (props) => {
 
     // state setters
     function updateView(viewObj) {
-        if (viewObj.type === 'set') {
+        if (viewObj.type === 'id') {
             setView(parseInt(viewObj.value));
         } else {
             setView(viewObj.value);
