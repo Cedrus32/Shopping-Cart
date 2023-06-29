@@ -12,12 +12,6 @@ const LinkList = () => {
             case 'Home':
                 navQuery = '';
                 break;
-            case "Men's Clothing":
-                navQuery = 'mens';
-                break;
-            case "Women's Clothing":
-                navQuery = 'womens';
-                break;
             default:
                 navQuery = name.toLowerCase();
         }

@@ -1,19 +1,21 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
 
 import useGetCat from '../hooks/useGetCat';
 
 import ItemCard from '../components/ItemCard';
 
-const CategoryView = () => {
+const CategoryView = (props) => {
     const { category } = useParams();
-    const { data } = useGetCat(category);
+    const { getProducts } = props;
+    const { data } = useGetCat({category: category, getProducts: getProducts});
 
     function getPageTitle(value) {
-        if (value === 'mens') {
+        if (value === "men's clothing") {
             return "Men's Clothing";
-        } else if (value === 'womens') {
+        } else if (value === "women's clothing") {
             return "Women's Clothing";
         } else if (value === 'jewelery') {
             return 'Jewelery';
@@ -35,5 +37,8 @@ const CategoryView = () => {
         </>
     )
 };
+CategoryView.propTypes = {
+    getProducts: PropTypes.func,
+}
 
 export default CategoryView;

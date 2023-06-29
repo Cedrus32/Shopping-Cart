@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
-import Main from './pages/Main';
-import getLSStatus from './scripts/getLSStatus';
+import App from './pages/Main';
 
 import './styles/reset.css';
 import './styles/layout.css';
@@ -15,6 +14,6 @@ import './styles/colors.css';
 const root = createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
-        <Main storageStatus={getLSStatus()}/>
+        <App />
     </BrowserRouter>
 );
