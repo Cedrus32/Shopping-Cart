@@ -1,16 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
 
 import useGetCat from '../hooks/useGetCat';
 
 import ItemCard from '../components/ItemCard';
 
-const CategoryView = (props) => {
+const CategoryView = () => {
     const { category } = useParams();
-    const { getProducts } = props;
-    const { data } = useGetCat({category: category, getProducts: getProducts});
+    const { data } = useGetCat(category);
 
     function getPageTitle(value) {
         if (value === "men's clothing") {
@@ -37,8 +35,5 @@ const CategoryView = (props) => {
         </>
     )
 };
-CategoryView.propTypes = {
-    getProducts: PropTypes.func,
-}
 
 export default CategoryView;

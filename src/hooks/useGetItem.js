@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 
-// import fetchData from '../scripts/fetchData';
+import { StoreContext } from '../contexts/StoreContext';
 
 const useGetItem = (props) => {
     const { updateView, id, cartItem } = props;
+    const { store } = useContext(StoreContext);
     let data = {
         id: null,
         title: null,
@@ -11,14 +12,6 @@ const useGetItem = (props) => {
         price: null,
         count: null,
         image: null,
-    };
-    const mockFetch = { // TEST: replace with API fetch
-        id: parseInt(id),
-        title: `item ${id}`,
-        description: 'description',
-        price: 100 * parseInt(id),
-        count: 0,
-        image: 'imageURL'
     };
     let exists;
 
@@ -34,8 +27,8 @@ const useGetItem = (props) => {
         data = cartItem;
     } else {
         exists = false;
-        data = mockFetch;
-        // data = fetchData(id);
+        let item = store.filter(item => item.id == id);
+        data = item[0];
     }
 
     return {

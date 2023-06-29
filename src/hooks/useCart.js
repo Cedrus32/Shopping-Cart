@@ -33,7 +33,7 @@ const useCart = (props) => {
             title: data.title,
             description: data.description,
             price: data.price,
-            count: data.count + 1,
+            count: 1,
             image: data.image,
         }
         setCart([
@@ -42,14 +42,12 @@ const useCart = (props) => {
         ]);
         if (storagePulled) {
             localStorage.setItem(data.id, JSON.stringify(item));
-            // console.log(JSON.parse(localStorage.getItem(data.id)));
         }
     }
     function removeItem(query) {
         setCart(cart.filter(item => item.id !== query));
         if (storagePulled) {
             localStorage.removeItem(query);
-            // console.log(JSON.parse(localStorage.getItem(query)));
         }
     }
     function updateItem(query, action, value) {
@@ -67,7 +65,6 @@ const useCart = (props) => {
         setCart([...cartCopy]);
         if (storagePulled) {
             localStorage.setItem(query, JSON.stringify(item));
-            // console.log(JSON.parse(localStorage.getItem(query)));
         }
     }
     // state getters
