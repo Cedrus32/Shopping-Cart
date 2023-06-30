@@ -8,8 +8,6 @@ const useGetCat = (props) => {
     const [ data, setData ] = useState([]);
     const { store } = useContext(StoreContext);
 
-    // console.log(catRef, category);
-
     if (catRef.current !== category) {
         catRef.current = category;
         
@@ -24,13 +22,8 @@ const useGetCat = (props) => {
     useEffect(() => {
         return () => {
             catRef.current = null;
-            // console.log(catRef.current);
-            // console.log('**********');
         }
     }, [])
-
-    // console.log(catRef, category);
-    // console.log('**********');
 
     return {
         data,

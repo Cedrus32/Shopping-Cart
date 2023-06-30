@@ -1,11 +1,9 @@
 import { useEffect, useContext } from 'react';
 
-import { ViewContext } from '../contexts/ViewContext';
 import { StoreContext } from '../contexts/StoreContext';
 
 const useGetItem = (props) => {
     const { setView, cartItem, id } = props;
-    console.log(setView);
     const { store } = useContext(StoreContext);
     let data = {
         id: null,
