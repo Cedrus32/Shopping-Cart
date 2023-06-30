@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import useCart from '../hooks/useCart';
 
@@ -11,36 +10,31 @@ import ItemView from '../pages/ItemView';
 import CartView from '../pages/CartView';
 
 
-const Main = (props) => {
-    const { storageStatus } = props;
+const Main = () => {
     const { 
         cart,
         view,
-        updateView,
         addItem,
         removeItem,
         updateItem,
         getCount,
         getItem,
-    } = useCart(storageStatus);
+    } = useCart();
 
     return (
         <>
-            <Navigation count={getCount(cart)} />
+            <Navigation count={getCount()} />
             <section id='page'>
                 <Routes>
                     <Route path='/' element={<LandingView />} />
                     <Route path='/:category' element={<CategoryView />} />
-                    <Route path='/:category/:id' element={<ItemView updateView={updateView} cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
+                    <Route path='/:category/:id' element={<ItemView cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
                     <Route path='/cart' element={<CartView cart={cart} removeItem={removeItem} updateItem={updateItem} />} />
                 </Routes>
             </section>
         </>
     )
 };
-Main.propTypes = {
-    storageStatus: PropTypes.bool,
-}
 
 export default Main;
 

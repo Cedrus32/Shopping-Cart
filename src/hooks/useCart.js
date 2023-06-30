@@ -1,32 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import PropTypes from 'prop-types';
 
-const useCart = (props) => {
-    const storageStatus = props;
+import { CartContext } from '../contexts/CartContext';
 
-    const [ cart, setCart ] = useState([]);
-    const [ storagePulled, setStoragePulled ] = useState(false);
-    const [ view, setView ] = useState(null);
-
-    useEffect(() => {
-        if (storageStatus === true) {
-            let items = [];
-            for (let i = 0; i < localStorage.length; i++) {
-                items.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-            }
-            setCart(items);
-            setStoragePulled(true);
-        }
-    }, []);
+const useCart = () => {
+    const { cart, setCart, view, setView, storagePulled } = useContext(CartContext);
 
     // state setters
-    function updateView(viewObj) {
-        if (viewObj.type === 'id') {
-            setView(parseInt(viewObj.value));
-        } else {
-            setView(viewObj.value);
-        }
-    }
     function addItem(data) {
         let item = {
             id: data.id,
@@ -68,9 +48,9 @@ const useCart = (props) => {
         }
     }
     // state getters
-    function getCount(data) {
+    function getCount() {
         let sum = 0;
-        data.forEach(item => sum += item.count);
+        cart.forEach(item => sum += item.count);
         return sum;
     }
     function getItem(query) {
@@ -80,7 +60,6 @@ const useCart = (props) => {
     return {
         cart,
         view,
-        updateView,
         addItem,
         removeItem,
         updateItem,
