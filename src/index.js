@@ -6,7 +6,7 @@ import StorageProvider from './contexts/StorageContext';
 import StoreProvider from './contexts/StoreContext';
 import CartProvider from './contexts/CartContext';
 import ViewProvider from './contexts/ViewContext';
-import Main from './loaders/Main';
+import Main from './pages/Main';
 
 import './styles/reset.css';
 import './styles/layout.css';

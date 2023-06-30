@@ -5,10 +5,10 @@ import useCart from '../hooks/useCart';
 import { ViewContext } from '../contexts/ViewContext';
 
 import Navigation from '../components/Navigation';
-import LandingView from '../pages/LandingView';
-import CategoryView from '../pages/CategoryView';
-import ItemView from '../pages/ItemView';
-import CartView from '../pages/CartView';
+import LandingView from './LandingView';
+import CategoryView from './CategoryView';
+import ItemView from './ItemView';
+import CartView from './CartView';
 
 
 const Main = () => {
@@ -37,5 +37,5 @@ const Main = () => {
     )
 };
 
-export default Main;
+export default Main
 
