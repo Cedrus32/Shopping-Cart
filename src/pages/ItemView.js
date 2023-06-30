@@ -10,9 +10,8 @@ import RemoveButton from '../components/RemoveButton';
 
 const ItemView = (props) => {
     const { id } = useParams();
-
-    const { updateView, cartItem, addItem, removeItem, updateItem } = props;
-    const { exists, data } = useGetItem({updateView: updateView, id: id, cartItem: cartItem});
+    const { setView, cartItem, addItem, removeItem, updateItem } = props;
+    const { exists, data } = useGetItem({setView: setView, cartItem: cartItem, id: id});
     let counter;
     let button;
 
@@ -38,7 +37,7 @@ const ItemView = (props) => {
     )
 };
 ItemView.propTypes = {
-    updateView: PropTypes.func,
+    setView: PropTypes.func,
     cartItem: PropTypes.object,
     addItem: PropTypes.func,
     removeItem: PropTypes.func,

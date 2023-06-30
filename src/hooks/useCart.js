@@ -54,7 +54,7 @@ const useCart = () => {
         return sum;
     }
     function getItem(query) {
-        return cart.find(item => item.id === query);
+        return cart.find(item => item.id == query);
     }
 
     return {

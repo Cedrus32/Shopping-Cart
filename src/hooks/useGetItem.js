@@ -1,9 +1,11 @@
 import { useEffect, useContext } from 'react';
 
+import { ViewContext } from '../contexts/ViewContext';
 import { StoreContext } from '../contexts/StoreContext';
 
 const useGetItem = (props) => {
-    const { updateView, id, cartItem } = props;
+    const { setView, cartItem, id } = props;
+    console.log(setView);
     const { store } = useContext(StoreContext);
     let data = {
         id: null,
@@ -16,9 +18,9 @@ const useGetItem = (props) => {
     let exists;
 
     useEffect(() => {
-        updateView({type: 'id', value: id});
+        setView(id);
         return () => {
-            updateView({type: 'reset', value: null});
+            setView(null);
         }
     }, []);
 

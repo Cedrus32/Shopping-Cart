@@ -9,7 +9,6 @@ const CartProvider = (props) => {
     const { storageStatus } = useContext(StorageContext);
     const [ cart, setCart ] = useState([]);
     const [ storagePulled, setStoragePulled ] = useState(false);
-    const [ view, setView ] = useState(null);
 
     useEffect(() => {
         if (storageStatus === true) {
@@ -23,7 +22,7 @@ const CartProvider = (props) => {
     }, []);
 
     return (
-        <CartContext.Provider value={{ cart, setCart, view, setView, storagePulled }}>
+        <CartContext.Provider value={{ cart, setCart, storagePulled }}>
             {props.children}
         </CartContext.Provider>
     )

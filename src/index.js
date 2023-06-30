@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import StorageProvider from './contexts/StorageContext';
 import StoreProvider from './contexts/StoreContext';
 import CartProvider from './contexts/CartContext';
+import ViewProvider from './contexts/ViewContext';
 import Main from './loaders/Main';
 
 import './styles/reset.css';
@@ -22,9 +23,11 @@ root.render(
     <StorageProvider>
         <StoreProvider>
             <CartProvider>
-                <BrowserRouter>
-                    <Main />
-                </BrowserRouter>
+                <ViewProvider>
+                    <BrowserRouter>
+                        <Main />
+                    </BrowserRouter>
+                </ViewProvider>
             </CartProvider>
         </StoreProvider>
     </StorageProvider>
