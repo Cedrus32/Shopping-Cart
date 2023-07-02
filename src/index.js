@@ -12,11 +12,12 @@ import './styles/reset.css';
 import './styles/layout.css';
 import './styles/shaping.css';
 import './styles/colors.css';
+import './styles/typo.css';
 
 import icons from './scripts/icons.js';
 // import fonts from './scripts/fonts.js';
 
-// BUG: when jumping to category/item views, store is not yet iniialized
+// BUG: when starting at category/item views, store is not yet iniialized
 
 
 const root = createRoot(document.getElementById('root'));

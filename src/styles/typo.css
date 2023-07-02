@@ -1,0 +1,16 @@
+body {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: green;
+}
+
+#menu-links,
+#shop-nav {
+    font-size: 1.25em;
+}
