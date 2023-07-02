@@ -38,7 +38,7 @@ const PageNav = () => {
     return (
         <>
             <img src='../icons/menu.svg' alt='menu' id="menu" onClick={toggleLinks} />
-            <ul id='menu-links' className='hide'>
+            <ul id='menu-links' className='flex'>
                 {navLinks}
             </ul>
         </>
