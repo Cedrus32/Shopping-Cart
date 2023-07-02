@@ -10,7 +10,10 @@ a:active {
     color: green;
 }
 
-#menu-links,
-#shop-nav {
+#menu-links {
     font-size: 1.25em;
+}
+
+#shop-nav {
+    font-size: 1.15em;
 }

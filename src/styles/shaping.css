@@ -1,3 +1,10 @@
+/* ITEM VIEW */
+
+.nav-header {
+    border: 1.5px solid var(--nav);
+    border-radius: 0.5em;
+}
+
 /* NAVIGATION */
 
 #menu {

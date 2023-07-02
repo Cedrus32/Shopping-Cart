@@ -21,7 +21,7 @@ const CategoryView = () => {
         } else if (value === 'electronics') {
             return 'Electronics';
         } else {
-            return 'All Products';
+            return 'All';
         }
     }
 
@@ -33,8 +33,10 @@ const CategoryView = () => {
 
     return (
         <>
-            <h1 data-testid='page-title'>{pageTitle}</h1>
-            <ShopNav />
+            <section className='nav-header'>
+                <h1 data-testid='page-title'>{pageTitle}</h1>
+                <ShopNav />
+            </section>
             <section id='content' className='category-view'>{itemCards}</section>
         </>
     )

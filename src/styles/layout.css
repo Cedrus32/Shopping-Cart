@@ -26,6 +26,7 @@ main,
 .cart-view,
 .cart-list,
 nav,
+.nav-header,
 #shop-nav,
 .cart-summary {
     display: flex;
@@ -34,9 +35,10 @@ nav,
 #page,
 .item-card,
 .item-view,
+.nav-header,
 .cart-view,
 .cart-list,
-#items-list,
+/* #items-list, */
 .cart-summary {
     flex-flow: column;
 }
@@ -64,9 +66,26 @@ body {
         width: inherit;
     }
 
+    #page,
+    nav {
+        padding: 1vh 1.5vh;
+    }
+
         #page {
             overflow: auto;
+            gap: calc(0.67em * 2);
         }
+
+            .nav-header {
+                align-items: center;
+            }
+
+                #shop-nav {
+                    margin-bottom: calc(0.67em * 2);
+                    gap: 1em;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
 
             #content {
                 width: 100%;
@@ -123,7 +142,6 @@ body {
             align-items: center;
             z-index: 2;
             width: 100%;
-            padding: 1vh 1.5vh;
         }
 
             #menu-links {
