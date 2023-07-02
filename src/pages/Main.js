@@ -6,7 +6,6 @@ import { ViewContext } from '../contexts/ViewContext';
 
 import Navigation from '../components/Navigation';
 import Landing from './Landing';
-import Shop from './Shop';
 import CategoryView from './CategoryView';
 import ItemView from './ItemView';
 import Cart from './Cart';
@@ -23,9 +22,6 @@ const Main = () => {
     } = useCart();
     const { view, setView } = useContext(ViewContext);
 
-    // <Route path='/shop' element={<Shop />}>
-    //     <Route path='shop/:category' element={<CategoryView />} />
-    // </Route>
     return (
         <>
             <Navigation count={getCount()} />
