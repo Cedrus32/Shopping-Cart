@@ -26,6 +26,7 @@ main,
 .cart-view,
 .cart-list,
 nav,
+#shop-nav,
 .cart-summary {
     display: flex;
 }
@@ -120,13 +121,19 @@ body {
             grid-area: nav;
             justify-content: space-between;
             align-items: center;
+            z-index: 2;
             width: 100%;
             padding: 1vh 1.5vh;
         }
 
             #menu-links {
+                width: 100%;
                 position: absolute;
+                z-index: 1;
                 bottom: 10vh;
+                left: 0;
+                gap: 1em;
+                padding: 1vh 1.5vh;
             }
 
             #back {
