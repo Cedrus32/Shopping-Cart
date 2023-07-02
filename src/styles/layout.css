@@ -67,21 +67,23 @@ body {
     }
 
     #page,
-    nav {
-        padding: 1vh 1.5vh;
+    .nav-header,
+    nav,
+    #menu-links {
+        padding: 1.5vh;
     }
 
         #page {
             overflow: auto;
-            gap: calc(0.67em * 2);
+            gap: 1.5em;
         }
 
             .nav-header {
                 align-items: center;
+                gap: 1.5em;
             }
 
                 #shop-nav {
-                    margin-bottom: calc(0.67em * 2);
                     gap: 1em;
                     flex-wrap: wrap;
                     justify-content: center;
@@ -151,7 +153,6 @@ body {
                 bottom: 10vh;
                 left: 0;
                 gap: 1em;
-                padding: 1vh 1.5vh;
             }
 
             #back {
