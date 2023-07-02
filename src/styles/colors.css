@@ -20,8 +20,12 @@ body {
             color: var(--lighter);
         }
 
+        li a {
+            color: var(--dark);
+        }
+
         .cart-summary {
-            background-color: var(--accent);
+            /* background-color: var(--accent); */
             color: var(--lightest);
         }
 

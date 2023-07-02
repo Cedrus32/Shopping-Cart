@@ -1,4 +1,17 @@
+:root {
+    --main-width: 100vw;
+    --page-height: 90vh;
+    --nav-height: 10vh;
+}
+
 /* DISPLAY */
+.hide {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
 
 main,
 .item-line {
@@ -43,7 +56,7 @@ body {
 
     main {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr auto;
+        grid-template-rows: var(--page-height) var(--nav-height);
         grid-template-areas: 'page'
                              'nav';
         height: inherit;
@@ -78,7 +91,7 @@ body {
                     grid-template-areas: 'remove image title price'
                                         'remove image count subtotal';
                 }
-                
+
                     .remove {
                         grid-area: remove;
                     }
@@ -106,8 +119,15 @@ body {
         nav {
             grid-area: nav;
             justify-content: space-between;
+            align-items: center;
             width: 100%;
+            padding: 1vh 1.5vh;
         }
+
+            #menu-links {
+                position: absolute;
+                bottom: 10vh;
+            }
 
             #back {
                 margin-left: auto;
@@ -115,4 +135,10 @@ body {
 
             #forward {
                 margin-right: auto;
+            }
+
+            .item-count {
+                position: absolute;
+                bottom: 6.25vh;
+                right: 0.75vh;
             }

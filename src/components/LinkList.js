@@ -5,6 +5,12 @@ import uniqid from 'uniqid';
 const LinkList = () => {
     const linkNames = ['Home', "Men's Clothing", "Women's Clothing", 'Jewelery', 'Electronics'];
     let navLinks = [];
+    const linkList = document.getElementById('menu-links');
+
+    function toggleLinks() {
+        linkList.classList.toggle('flex');
+        linkList.classList.toggle('hide');
+    }
 
     function createNavLink(name) {
         let navQuery;
@@ -27,9 +33,12 @@ const LinkList = () => {
     });
 
     return (
-        <ul>
-            {navLinks}
-        </ul>
+        <>
+            <img src='../icons/menu.svg' alt='menu' id="menu" onClick={toggleLinks} />
+            <ul id='menu-links' className='hide'>
+                {navLinks}
+            </ul>
+        </>
     )
 }
 

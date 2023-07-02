@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import LinkList from './LinkList.js';
@@ -9,14 +9,12 @@ const Navigation = (props) => {
     const { count } = props;
     const navigate = useNavigate();
 
-    let back = '<<';
-    let forw = '>>';
-
     return (
         <nav>
             <LinkList />
-            <NavLink id='back' onClick={() => navigate(-1)}>{back}</NavLink>
-            <NavLink id='forward' onClick={() => navigate(1)}>{forw}</NavLink>
+            <img src='../icons/back.svg' alt={'Previous Page'} id='back' className='navigate' onClick={() => navigate(-1)} />
+            <img src='../icons/odin-icon.svg' alt={'Odin Shop Home'} id='logo' onClick={() => navigate('/')} />
+            <img src='../icons/for.svg' alt={'Next Page'} id='forward' className='navigate' onClick={() => navigate(1)} />
             <CartSummary count={count}/>
         </nav>
     )

@@ -1,14 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const CartSummary = (props) => {
     let { count } = props;
-
+    const navigate = useNavigate();
+    
     return (
         <div role='cart-summary' className='cart-summary'>
-            <Link to='/cart'>Cart</Link>
-            <span role='item-count'>{count}</span>
+            <img src='../icons/basket.svg' alt='Basket' onClick={() => navigate('/cart')} />
+            <div role='item-count' className='item-count'>{count}</div>
         </div>
     )
 };
