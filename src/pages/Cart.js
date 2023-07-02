@@ -5,7 +5,7 @@ import uniqid from 'uniqid';
 import ItemLine from '../components/ItemLine';
 import CartFooter from '../components/CartFooter';
 
-const CartView = (props) => {
+const Cart = (props) => {
     const { cart, removeItem, updateItem } = props;
     let items = [];
     let total = 0;
@@ -36,10 +36,10 @@ const CartView = (props) => {
         </>
     )
 };
-CartView.propTypes = {
+Cart.propTypes = {
     cart: PropTypes.array,
     removeItem: PropTypes.func,
     updateItem: PropTypes.func,
 }
 
-export default CartView;
+export default Cart;
