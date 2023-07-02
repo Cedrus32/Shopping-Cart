@@ -10,9 +10,10 @@ import Main from './pages/Main';
 
 import './styles/reset.css';
 import './styles/layout.css';
+import './styles/shaping.css';
 import './styles/colors.css';
 
-// import icons from './scripts/icons.js';
+import icons from './scripts/icons.js';
 // import fonts from './scripts/fonts.js';
 
 // BUG: when jumping to category/item views, store is not yet iniialized
