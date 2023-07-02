@@ -7,7 +7,7 @@ const ShopNav = () => {
     let navLinks = [];
 
     function createNavLink(name) {
-        let navQuery = `${name.toLowerCase()}`;
+        let navQuery = `/shop/${name.toLowerCase()}`;
         return (
             <NavLink key={uniqid()} to={navQuery}>{name}</NavLink>
         )

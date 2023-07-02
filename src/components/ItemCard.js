@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const ItemCard = (props) => {
     const navigate = useNavigate();
     const { data } = props;
-    let navQuery = `${data.category}/${data.id}`;
+    let navQuery = `/product/${data.id}`;
 
     return (
         <article role='article' className='item-card' data-testid={data.id} data-id={data.id} onClick={() => navigate(navQuery)}>

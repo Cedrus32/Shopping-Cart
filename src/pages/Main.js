@@ -23,16 +23,17 @@ const Main = () => {
     } = useCart();
     const { view, setView } = useContext(ViewContext);
 
+    // <Route path='/shop' element={<Shop />}>
+    //     <Route path='shop/:category' element={<CategoryView />} />
+    // </Route>
     return (
         <>
             <Navigation count={getCount()} />
             <section id='page'>
                 <Routes>
                     <Route path='/' element={<Landing />} />
-                    <Route path='/shop' element={<Shop />}>
-                        <Route path=':category' element={<CategoryView />} />
-                        <Route path=':category/:id' element={<ItemView setView={setView} cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
-                    </Route>
+                    <Route path='shop/:category' element={<CategoryView />} />
+                    <Route path='product/:id' element={<ItemView setView={setView} cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
                     <Route path='/cart' element={<Cart cart={cart} removeItem={removeItem} updateItem={updateItem} />} />
                 </Routes>
             </section>
