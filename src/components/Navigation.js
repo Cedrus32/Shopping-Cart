@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import LinkList from './LinkList.js';
+import PageNav from './PageNav';
 import CartSummary from './CartSummary';
 
 const Navigation = (props) => {
@@ -11,7 +11,7 @@ const Navigation = (props) => {
 
     return (
         <nav>
-            <LinkList />
+            <PageNav />
             <img src='../icons/back.svg' alt={'Previous Page'} id='back' className='navigate' onClick={() => navigate(-1)} />
             <img src='../icons/odin-icon.svg' alt={'Odin Shop Home'} id='logo' onClick={() => navigate('/')} />
             <img src='../icons/for.svg' alt={'Next Page'} id='forward' className='navigate' onClick={() => navigate(1)} />

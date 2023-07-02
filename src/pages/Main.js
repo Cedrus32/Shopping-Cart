@@ -5,6 +5,7 @@ import useCart from '../hooks/useCart';
 import { ViewContext } from '../contexts/ViewContext';
 
 import Navigation from '../components/Navigation';
+import Shop from './Shop';
 import LandingView from './LandingView';
 import CategoryView from './CategoryView';
 import ItemView from './ItemView';
@@ -28,8 +29,10 @@ const Main = () => {
             <section id='page'>
                 <Routes>
                     <Route path='/' element={<LandingView />} />
-                    <Route path='/:category' element={<CategoryView />} />
-                    <Route path='/:category/:id' element={<ItemView setView={setView} cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
+                    <Route path='/shop' element={<Shop />}>
+                        <Route path=':category' element={<CategoryView />} />
+                        <Route path=':category/:id' element={<ItemView setView={setView} cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
+                    </Route>
                     <Route path='/cart' element={<CartView cart={cart} removeItem={removeItem} updateItem={updateItem} />} />
                 </Routes>
             </section>

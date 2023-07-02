@@ -2,8 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import uniqid from 'uniqid';
 
-const LinkList = () => {
-    const linkNames = ['Home', "Men's Clothing", "Women's Clothing", 'Jewelery', 'Electronics'];
+const PageNav = () => {
+    const linkNames = ['Home', 'Shop', 'Contact'];
     let navLinks = [];
     const linkList = document.getElementById('menu-links');
 
@@ -18,8 +18,11 @@ const LinkList = () => {
             case 'Home':
                 navQuery = '';
                 break;
+            case 'Shop':
+                navQuery = 'shop/all';
+                break;
             default:
-                navQuery = name.toLowerCase();
+                navQuery = `${name.toLowerCase()}`;
         }
         return (
             <li key={uniqid()}>
@@ -42,4 +45,4 @@ const LinkList = () => {
     )
 }
 
-export default LinkList;
+export default PageNav;

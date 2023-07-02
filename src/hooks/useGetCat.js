@@ -10,13 +10,16 @@ const useGetCat = (props) => {
 
     if (catRef.current !== category) {
         catRef.current = category;
-        
-        let items = store.filter(item => item.category === category);
-        let data = [];
-        items.forEach(item => {
-            data.push({id: item.id, title: item.title, price: item.price, image: item.image});
-        })
-        setData(data);
+        if (category === 'all') {
+            setData(store);
+        } else {
+            let itemData = [];
+            let items = store.filter(item => item.category === category);
+            items.forEach(item => {
+                itemData.push({id: item.id, title: item.title, price: item.price, image: item.image});
+            });
+            setData(itemData);
+        }
     }
 
     useEffect(() => {
