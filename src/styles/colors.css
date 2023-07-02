@@ -12,6 +12,31 @@ body {
     color: var(--dark);
 }
 
+    a {
+        color: var(--dark);
+        position: relative;
+        height: auto;
+        width: auto;
+    }
+
+    a.active {
+        color: var(--lightest);
+    }
+
+        a.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-0.25em) translateY(-0.25em);
+            z-index: -1;
+            height: calc(100% + 0.5em);
+            width: calc(100% + 0.5em);
+            padding: 0.5em;
+            background-color: var(--accent);
+            border-radius: 0.5em;
+        }
+
     nav {
         background-color: var(--nav);
     }
@@ -21,27 +46,19 @@ body {
            border-top: 1.5px solid var(--nav);
         }
 
-        li a {
-            color: var(--dark);
-        }
-
         .cart-summary {
             color: var(--lightest);
         }
 
-    #page a {
-        color: var(--dark);
+    .decrement,
+    .increment {
+        background-color: var(--lighter)
     }
 
-        .decrement,
-        .increment {
-            background-color: var(--lighter)
-        }
+    input {
+        background-color: var(--lightest);
+    }
 
-        input {
-            background-color: var(--lightest);
-        }
-
-        .add {
-            background-color: var(--accent)
-        }
+    .add {
+        background-color: var(--accent)
+    }

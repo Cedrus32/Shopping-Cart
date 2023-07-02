@@ -6,10 +6,6 @@ a {
     text-decoration: none;
 }
 
-a:active {
-    color: green;
-}
-
 #menu-links {
     font-size: 1.25em;
 }

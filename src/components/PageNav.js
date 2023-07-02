@@ -7,7 +7,7 @@ const PageNav = () => {
     let navLinks = [];
     const linkList = document.getElementById('menu-links');
 
-    function toggleLinks() {
+    function toggleNavLinks() {
         linkList.classList.toggle('flex');
         linkList.classList.toggle('hide');
     }
@@ -25,9 +25,7 @@ const PageNav = () => {
                 navQuery = `${name.toLowerCase()}`;
         }
         return (
-            <li key={uniqid()}>
-                <NavLink to={navQuery}>{name}</NavLink>
-            </li>
+            <NavLink key={uniqid()} to={navQuery}>{name}</NavLink>
         );
     }
 
@@ -37,10 +35,10 @@ const PageNav = () => {
 
     return (
         <>
-            <img src='../icons/menu.svg' alt='menu' id="menu" onClick={toggleLinks} />
-            <ul id='menu-links' className='flex'>
+            <img src='../icons/menu.svg' alt='menu' id="menu" onClick={toggleNavLinks} />
+            <div id='menu-links' className='flex'>
                 {navLinks}
-            </ul>
+            </div>
         </>
     )
 }
