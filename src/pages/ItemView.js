@@ -16,8 +16,8 @@ const ItemView = (props) => {
     let button;
 
     if (exists) {
-        counter = <Counter updateItem={updateItem} id={data.id} count={data.count} />;
-        button = <RemoveButton removeItem={removeItem} id={data.id} />;
+        counter = <Counter location='itemView' updateItem={updateItem} id={data.id} count={data.count} />;
+        button = <RemoveButton location='itemView' removeItem={removeItem} id={data.id} />;
     } else {
         button = <AddButton addItem={addItem} data={data} />;
     }

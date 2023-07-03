@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Counter = (props) => {
-    const { updateItem, id, count } = props;
+    const { location, updateItem, id, count } = props;
+    let input;
+    let firstButton;
+    let secondButton;
 
     function handleChange(e) {
         let action;
@@ -24,17 +27,27 @@ const Counter = (props) => {
         updateItem(id, action, value);
     }
 
+    if (location === 'itemView') {
+        firstButton = <button type='button' className='decrement' data-action='decrement' onClick={handleChange}>-</button>;
+        input = <input type='number' pattern='^[0-9]+$' min={ 1 } step={ 1 } value={count} data-action='set' onKeyDown={handleChange} onChange={handleChange} />;
+        secondButton = <button type='button' className='increment' data-action='increment' onClick={handleChange}>+</button>;
+    } else {
+        firstButton = <button type='button' className='increment' data-action='increment' onClick={handleChange}>+</button>;
+        secondButton = <button type='button' className='decrement' data-action='decrement' onClick={handleChange}>-</button>;
+    }
+
     // TODO: style input validation
 
     return (
         <div className='item-counter'>
-            <button type='button' className='decrement' data-action='decrement' onClick={handleChange}>-</button>
-            <input type='number' pattern='^[0-9]+$' min={ 1 } step={ 1 } value={count} data-action='set' onKeyDown={handleChange} onChange={handleChange} />
-            <button type='button' className='increment' data-action='increment' onClick={handleChange}>+</button>
+            {firstButton}
+            {input}
+            {secondButton}
         </div>
     )
 };
 Counter.propTypes = {
+    location: PropTypes.string,
     updateItem: PropTypes.func,
     id: PropTypes.number,
     count: PropTypes.number,

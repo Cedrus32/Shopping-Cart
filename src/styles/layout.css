@@ -38,6 +38,7 @@ nav,
 .item-card,
 .item-view,
 .item-action,
+.item-line .item-counter,
 .nav-header,
 .cart-view,
 .cart-list,
@@ -94,6 +95,7 @@ body {
 
             #content {
                 width: 100%;
+                gap: 1em;
             }
 
                 .category-view {
@@ -117,41 +119,54 @@ body {
                         gap: 0.5em;
                     }
 
-                    .item-action .remove {
+                    .remove {
                         justify-content: center;
                         align-items: center;
                     }
 
-                .item-line {
-                    grid-template-columns: auto 30vw 1fr auto;
-                    grid-template-rows: auto auto;
-                    grid-template-areas: 'remove image title price'
-                                        'remove image count subtotal';
+                .cart-list {
+                    gap: 1em;
                 }
 
-                    .remove {
-                        grid-area: remove;
+                    .item-line {
+                        grid-template-columns: 6em 0.5fr 0.5fr 2em;
+                        grid-template-rows: 2em 2em 2em;
+                        grid-template-areas: 'image title title    action'
+                                             'image price price    action'
+                                             'image count subtotal remove';
+                        column-gap: 0.5em;
                     }
 
-                    .item-line img {
-                        grid-area: image;
-                    }
+                        .item-line img {
+                            grid-area: image;
+                        }
 
-                    .title {
-                        grid-area: title;
-                    }
+                        .title {
+                            grid-area: title;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
 
-                    .price {
-                        grid-area: price;
-                    }
+                        .price {
+                            grid-area: price;
+                        }
 
-                    .item-line .item-counter {
-                        grid-area: count;
-                    }
+                        .subtotal {
+                            grid-area: subtotal;
+                        }
 
-                    .subtotal {
-                        grid-area: subtotal;
-                    }
+                        .count {
+                            grid-area: count;
+                        }
+
+                        .item-line .item-counter {
+                            grid-area: action;
+                        }
+
+                        .remove {
+                            grid-area: remove;
+                        }
 
         nav {
             grid-area: nav;

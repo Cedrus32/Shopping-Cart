@@ -4,10 +4,9 @@
     border: 1.5px solid var(--nav);
     border-radius: 0.5em;
 }
-
 /* ITEM VIEW */
 
-.item-action img {
+.item-action .remove img {
     height: 1em;
 }
 
@@ -27,6 +26,29 @@
     .item-counter .increment {
         height: 1.5em;
         width: 1.5em;
+        text-align: center;
+        vertical-align: center;
+    }
+
+/* CART */
+
+.item-line {
+    border: 1px solid var(--dark);
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
+
+.item-line .item-img {
+    height: 100%;
+    width: 100%;
+}
+
+.item-line .remove img {
+    height: 1em;
+}
+
+    .item-line .item-counter input {
+        width: 3em;
     }
 
 /* NAVIGATION */
