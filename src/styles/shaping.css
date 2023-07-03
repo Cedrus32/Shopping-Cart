@@ -1,9 +1,33 @@
-/* ITEM VIEW */
+/* CATEGORY VIEW */
 
 .nav-header {
     border: 1.5px solid var(--nav);
     border-radius: 0.5em;
 }
+
+/* ITEM VIEW */
+
+.item-action img {
+    height: 1em;
+}
+
+    .item-counter input,
+    .item-counter .decrement,
+    .item-counter .increment {
+        border: 1.5px solid var(--dark);
+        border-radius: 0.5em;
+    }
+
+    .item-counter input {
+        height: 1.5em;
+        text-align: center;
+    }
+
+    .item-counter .decrement,
+    .item-counter .increment {
+        height: 1.5em;
+        width: 1.5em;
+    }
 
 /* NAVIGATION */
 

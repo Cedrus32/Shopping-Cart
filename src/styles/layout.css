@@ -23,6 +23,8 @@ main,
 .item-card,
 .item-view,
 .item-action,
+.item-counter,
+.item-action .remove,
 .cart-view,
 .cart-list,
 nav,
@@ -35,6 +37,7 @@ nav,
 #page,
 .item-card,
 .item-view,
+.item-action,
 .nav-header,
 .cart-view,
 .cart-list,
@@ -105,7 +108,19 @@ body {
 
                 .item-action {
                     justify-content: center;
+                    align-items: center;
                 }
+
+                    .item-counter {
+                        justify-content: center;
+                        align-items: center;
+                        gap: 0.5em;
+                    }
+
+                    .item-action .remove {
+                        justify-content: center;
+                        align-items: center;
+                    }
 
                 .item-line {
                     grid-template-columns: auto 30vw 1fr auto;

@@ -5,7 +5,7 @@ const RemoveButton = (props) => {
     const { removeItem, id } = props;
 
     return (
-        <button type='button' className='remove' onClick={() => removeItem(id)}>X</button>
+        <button type='button' className='remove' onClick={() => removeItem(id)}><img src='../icons/delete.svg' alt='remove item' /> Remove</button>
     )
 };
 RemoveButton.propTypes = {
