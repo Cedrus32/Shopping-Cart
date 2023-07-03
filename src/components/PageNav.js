@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import uniqid from 'uniqid';
 
 const PageNav = () => {
-    const linkNames = ['Home', 'Shop'];
+    const linkNames = ['Home', 'Shop', 'Cart'];
     let navLinks = [];
     const linkList = document.getElementById('menu-links');
 
