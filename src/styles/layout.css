@@ -70,16 +70,17 @@ body {
         width: inherit;
     }
 
-    #page,
+    /* #page, */
     .nav-header,
     nav,
     #menu-links {
-        padding: 1.5vh;
+        padding: 2vh;
     }
 
         #page {
             overflow: auto;
             gap: 1.5em;
+            padding: 2vh 2vh 10vh;
         }
 
             .nav-header {
@@ -104,8 +105,8 @@ body {
                 }
 
                     .item-card {
-                        height: 300px;
-                        width: 300px;
+                        height: auto;
+                        width: 100%;
                     }
 
                 .item-action {
