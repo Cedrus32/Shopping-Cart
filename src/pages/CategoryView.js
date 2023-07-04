@@ -34,11 +34,11 @@ const CategoryView = () => {
 
     return (
         <>
-            <section className='nav-header'>
+            <menu id='category-menu'>
                 <h1 data-test-id='page-title'>{pageTitle}</h1>
                 <CatNav />
-            </section>
-            <section id='content' className='category-view'>{itemCards}</section>
+            </menu>
+            <section id='category-view' className='content'>{itemCards}</section>
         </>
     )
 };

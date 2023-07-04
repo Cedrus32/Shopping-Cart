@@ -22,9 +22,9 @@ const CatNav = (props) => {
     })
 
     return (
-        <section id='shop-nav'>
+        <nav id='category-nav'>
             {navLinks}
-        </section>
+        </nav>
     )
 };
 CatNav.propTypes = {

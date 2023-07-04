@@ -28,18 +28,18 @@ const Counter = (props) => {
     }
 
     if (location === 'itemView') {
-        firstButton = <button type='button' className='decrement' data-action='decrement' onClick={handleChange}>-</button>;
-        input = <input type='number' pattern='^[0-9]+$' min={ 1 } step={ 1 } value={count} data-action='set' onKeyDown={handleChange} onChange={handleChange} />;
-        secondButton = <button type='button' className='increment' data-action='increment' onClick={handleChange}>+</button>;
+        firstButton = <button id='decrement' type='button' data-action='decrement' onClick={handleChange}>-</button>;
+        input = <input id='quantity-input' type='number' pattern='^[0-9]+$' min={ 1 } step={ 1 } value={count} data-action='set' onKeyDown={handleChange} onChange={handleChange} />;
+        secondButton = <button id='increment' type='button' data-action='increment' onClick={handleChange}>+</button>;
     } else {
-        firstButton = <button type='button' className='increment' data-action='increment' onClick={handleChange}>+</button>;
-        secondButton = <button type='button' className='decrement' data-action='decrement' onClick={handleChange}>-</button>;
+        firstButton = <button id='increment' type='button' data-action='increment' onClick={handleChange}>+</button>;
+        secondButton = <button id='decrement' type='button' data-action='decrement' onClick={handleChange}>-</button>;
     }
 
     // TODO: style input validation
 
     return (
-        <div className='item-counter'>
+        <div id='change-quantity'>
             {firstButton}
             {input}
             {secondButton}

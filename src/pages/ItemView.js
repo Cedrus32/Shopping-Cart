@@ -24,14 +24,15 @@ const ItemView = (props) => {
 
     return (
         <>
-            <h1 data-testid='page-title'>{data.title}</h1>
-            <section id='content' className='item-view'>
+            <section id='item-view' className='content'>
                 <img src={data.image} alt={data.title} />
+                <h1 data-testid='page-title'>{data.title}</h1>
+                <p id='price'>{data.price}</p>
                 <p id='description'>{data.description}</p>
-                <div className='item-action'>
+                <menu id='item-action'>
                     {counter}
                     {button}
-                </div>
+                </menu>
             </section>
         </>
     )

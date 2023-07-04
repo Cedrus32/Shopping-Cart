@@ -14,7 +14,7 @@ const RemoveButton = (props) => {
     }
 
     return (
-        <button type='button' className='remove' onClick={() => removeItem(id)}>{content}</button>
+        <button id='remove-item' type='button' onClick={() => removeItem(id)}>{content}</button>
     )
 };
 RemoveButton.propTypes = {

@@ -5,7 +5,7 @@ const AddButton = (props) => {
     const { addItem, data } = props;
 
     return (
-        <button type='button' className='add' onClick={() => addItem(data)}>Add To Cart</button>
+        <button id='add-item' type='button' onClick={() => addItem(data)}>Add To Cart</button>
     )
 };
 AddButton.propTypes ={
