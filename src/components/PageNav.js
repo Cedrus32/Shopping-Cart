@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import uniqid from 'uniqid';
 
+import menu from '../icons/menu.svg';
+
 const PageNav = () => {
     const linkNames = ['Home', 'Shop', 'Cart'];
     let navLinks = [];
@@ -35,7 +37,7 @@ const PageNav = () => {
 
     return (
         <>
-            <img src='../icons/menu.svg' alt='menu' id="menu" onClick={toggleNavLinks} />
+            <img src={menu} alt='menu' id="menu" onClick={toggleNavLinks} />
             <div id='menu-links' className='flex'>
                 {navLinks}
             </div>

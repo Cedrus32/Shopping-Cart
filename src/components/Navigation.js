@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 import PageNav from './PageNav';
 import CartSummary from './CartSummary';
 
+import backward from '../icons/back.svg';
+import forward from '../icons/for.svg';
+import logo from '../icons/odin-icon.svg';
+
 const Navigation = (props) => {
     const { count } = props;
     const navigate = useNavigate();
@@ -12,9 +16,9 @@ const Navigation = (props) => {
     return (
         <nav>
             <PageNav />
-            <img src='../icons/back.svg' alt={'Previous Page'} id='back' className='navigate' onClick={() => navigate(-1)} />
-            <img src='../icons/odin-icon.svg' alt={'Odin Shop Home'} id='logo' onClick={() => navigate('/')} />
-            <img src='../icons/for.svg' alt={'Next Page'} id='forward' className='navigate' onClick={() => navigate(1)} />
+            <img src={backward} alt={'Previous Page'} id='back' className='navigate' onClick={() => navigate(-1)} />
+            <img src={logo} alt={'Odin Shop Home'} id='logo' onClick={() => navigate('/')} />
+            <img src={forward} alt={'Next Page'} id='forward' className='navigate' onClick={() => navigate(1)} />
             <CartSummary count={count}/>
         </nav>
     )

@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import del from '../icons/delete.svg';
+
 const RemoveButton = (props) => {
     const { location, removeItem, id } = props;
     let content;
 
     if (location === 'itemView') {
-        content = <><img src='../icons/delete.svg' alt='remove item' /> Remove</>
+        content = <><img src={del} alt='remove item' /> Remove</>
     } else {
-        content = <img src='../icons/delete.svg' alt='remove item' />
+        content = <img src={del} alt='remove item' />
     }
 
     return (

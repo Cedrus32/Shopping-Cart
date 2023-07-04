@@ -14,7 +14,7 @@ import './styles/shaping.css';
 import './styles/colors.css';
 import './styles/typo.css';
 
-import icons from './scripts/icons.js';
+// import icons from './scripts/icons.js';
 // import fonts from './scripts/fonts.js';
 
 // BUG: when starting at category/item views, store is not yet iniialized
