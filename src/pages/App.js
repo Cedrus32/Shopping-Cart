@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import useCart from '../hooks/useCart';
 import { ViewContext } from '../contexts/ViewContext';
 
-import Navigation from '../components/Navigation';
+import Menu from '../components/Menu';
 import Landing from './Landing';
 import Shop from './Shop';
 import CategoryView from './CategoryView';
@@ -12,7 +12,7 @@ import ItemView from './ItemView';
 import Cart from './Cart';
 
 
-const Main = () => {
+const App = () => {
     const { 
         cart,
         addItem,
@@ -25,8 +25,8 @@ const Main = () => {
 
     return (
         <>
-            <Navigation count={getCount()} />
-            <section id='page'>
+            <Menu count={getCount()} />
+            <main>
                 <Routes>
                     <Route index element={<Landing />} />
                     <Route path='shop' element={<Shop />}>
@@ -35,10 +35,10 @@ const Main = () => {
                     </Route>
                     <Route path='cart' element={<Cart cart={cart} removeItem={removeItem} updateItem={updateItem} />} />
                 </Routes>
-            </section>
+            </main>
         </>
     )
 };
 
-export default Main
+export default App;
 

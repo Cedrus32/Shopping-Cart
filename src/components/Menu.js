@@ -9,22 +9,22 @@ import backward from '../icons/back.svg';
 import forward from '../icons/for.svg';
 import logo from '../icons/odin-icon.svg';
 
-const Navigation = (props) => {
+const Menu = (props) => {
     const { count } = props;
     const navigate = useNavigate();
 
     return (
-        <nav>
+        <menu>
             <PageNav />
-            <img src={backward} alt={'Previous Page'} id='back' className='navigate' onClick={() => navigate(-1)} />
-            <img src={logo} alt={'Odin Shop Home'} id='logo' onClick={() => navigate('/')} />
-            <img src={forward} alt={'Next Page'} id='forward' className='navigate' onClick={() => navigate(1)} />
+            <img role='navigation' id='nav-back' className='navigate' src={backward} alt={'Previous Page'} onClick={() => navigate(-1)} />
+            <img role='navigation' id='nav-home' src={logo} alt={'Odin Shop Home'} onClick={() => navigate('/')} />
+            <img role='navigation' id='nav-forward' className='navigate' src={forward} alt={'Next Page'} onClick={() => navigate(1)} />
             <CartSummary count={count}/>
-        </nav>
+        </menu>
     )
 };
-Navigation.propTypes = {
+Menu.propTypes = {
     count: PropTypes.number,
 }
 
-export default Navigation;
+export default Menu;

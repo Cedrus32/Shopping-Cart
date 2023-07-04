@@ -9,10 +9,10 @@ const CartSummary = (props) => {
     const navigate = useNavigate();
     
     return (
-        <div role='cart-summary' className='cart-summary'>
-            <img src={basket} alt='Basket' onClick={() => navigate('/cart')} />
-            <div role='item-count' className='item-count'>{count}</div>
-        </div>
+        <>
+            <img role='navigation' id='nav-cart' src={basket} alt='Your Cart' onClick={() => navigate('/cart')} />
+            <div role='figure' id='cart-item-count'>{count}</div>
+        </>
     )
 };
 CartSummary.propTypes = {

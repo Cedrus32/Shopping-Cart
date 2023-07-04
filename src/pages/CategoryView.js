@@ -4,7 +4,7 @@ import uniqid from 'uniqid';
 
 import useGetCat from '../hooks/useGetCat';
 
-import ShopNav from '../components/ShopNav';
+import CatNav from '../components/CatNav';
 import ItemCard from '../components/ItemCard';
 
 const CategoryView = () => {
@@ -36,7 +36,7 @@ const CategoryView = () => {
         <>
             <section className='nav-header'>
                 <h1 data-test-id='page-title'>{pageTitle}</h1>
-                <ShopNav />
+                <CatNav />
             </section>
             <section id='content' className='category-view'>{itemCards}</section>
         </>

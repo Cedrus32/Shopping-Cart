@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
 
-const ShopNav = (props) => {
+const CatNav = (props) => {
     const { category } = props;
     const linkNames = ['All', "Men's Clothing", "Women's Clothing", 'Jewelery', 'Electronics'];
     let navLinks = [];
@@ -27,8 +27,8 @@ const ShopNav = (props) => {
         </section>
     )
 };
-ShopNav.propTypes = {
+CatNav.propTypes = {
     category: PropTypes.string,
 }
 
-export default ShopNav;
+export default CatNav;

@@ -37,10 +37,10 @@ const PageNav = () => {
 
     return (
         <>
-            <img src={menu} alt='menu' id="menu" onClick={toggleNavLinks} />
-            <div id='menu-links' className='flex'>
+            <img role='button' id='toggle-page-nav' src={menu} alt='toggle page nav' onClick={toggleNavLinks} />
+            <nav id='page-nav' className='make-flex'>
                 {navLinks}
-            </div>
+            </nav>
         </>
     )
 }

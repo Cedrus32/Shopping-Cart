@@ -6,7 +6,7 @@ import StorageProvider from './contexts/StorageContext';
 import StoreProvider from './contexts/StoreContext';
 import CartProvider from './contexts/CartContext';
 import ViewProvider from './contexts/ViewContext';
-import Main from './pages/Main';
+import App from './pages/App';
 
 import './styles/reset.css';
 import './styles/layout.css';
@@ -14,14 +14,14 @@ import './styles/shaping.css';
 import './styles/colors.css';
 import './styles/typo.css';
 
-const root = createRoot(document.getElementById('root'));
-root.render(
+const app = createRoot(document.getElementById('app'));
+app.render(
     <StorageProvider>
         <StoreProvider>
             <CartProvider>
                 <ViewProvider>
                     <BrowserRouter>
-                        <Main />
+                        <App />
                     </BrowserRouter>
                 </ViewProvider>
             </CartProvider>
