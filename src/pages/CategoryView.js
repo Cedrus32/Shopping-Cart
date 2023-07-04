@@ -10,7 +10,7 @@ import ItemCard from '../components/ItemCard';
 const CategoryView = () => {
     const { category } = useParams();
     const { data } = useGetCat(category);
-
+    
     function getPageTitle(value) {
         if (value === "men's clothing") {
             return "Men's Clothing";
@@ -25,7 +25,8 @@ const CategoryView = () => {
         }
     }
 
-    let pageTitle = getPageTitle(category);
+    const pageTitle = getPageTitle(category);
+
     let itemCards = [];
     data.forEach(item => {
         itemCards.push(<ItemCard key={uniqid()} data={item} />);
@@ -34,7 +35,7 @@ const CategoryView = () => {
     return (
         <>
             <section className='nav-header'>
-                <h1 data-testid='page-title'>{pageTitle}</h1>
+                <h1 data-test-id='page-title'>{pageTitle}</h1>
                 <ShopNav />
             </section>
             <section id='content' className='category-view'>{itemCards}</section>

@@ -1,10 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
 
-const ShopNav = () => {
+const ShopNav = (props) => {
+    const { category } = props;
     const linkNames = ['All', "Men's Clothing", "Women's Clothing", 'Jewelery', 'Electronics'];
     let navLinks = [];
+    let pageTitle;
+
 
     function createNavLink(name) {
         let navQuery = `/shop/${name.toLowerCase()}`;
@@ -23,5 +27,8 @@ const ShopNav = () => {
         </section>
     )
 };
+ShopNav.propTypes = {
+    category: PropTypes.string,
+}
 
 export default ShopNav;

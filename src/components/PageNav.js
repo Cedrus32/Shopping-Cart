@@ -21,7 +21,7 @@ const PageNav = () => {
                 navQuery = '';
                 break;
             case 'Shop':
-                navQuery = 'shop/all';
+                navQuery = 'shop';
                 break;
             default:
                 navQuery = `${name.toLowerCase()}`;
