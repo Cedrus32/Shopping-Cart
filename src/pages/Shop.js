@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 const Shop = () => {
     const navigate = useNavigate();
+    const path = useLocation().pathname;
 
     useEffect(() => {
-        navigate('/shop/all');
-    }, []);
+        if (path === '/shop') {
+            navigate('/shop/all');
+        }
+    }, [path]);
 
     return (
         <>
@@ -15,4 +18,4 @@ const Shop = () => {
     )
 };
 
-export default Shop;
+export default Shop

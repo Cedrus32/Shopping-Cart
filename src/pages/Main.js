@@ -8,7 +8,7 @@ import Navigation from '../components/Navigation';
 import Landing from './Landing';
 import Shop from './Shop';
 import CategoryView from './CategoryView';
-// import ItemView from './ItemView';
+import ItemView from './ItemView';
 import Cart from './Cart';
 
 
@@ -23,8 +23,6 @@ const Main = () => {
     } = useCart();
     const { view, setView } = useContext(ViewContext);
 
-    // <Route path='product/:id' element={<ItemView setView={setView} cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
-
     return (
         <>
             <Navigation count={getCount()} />
@@ -33,6 +31,7 @@ const Main = () => {
                     <Route index element={<Landing />} />
                     <Route path='shop' element={<Shop />}>
                         <Route path=':category' element={<CategoryView />} />
+                        <Route path='product/:id' element={<ItemView setView={setView} cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
                     </Route>
                     <Route path='cart' element={<Cart cart={cart} removeItem={removeItem} updateItem={updateItem} />} />
                 </Routes>
