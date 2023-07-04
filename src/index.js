@@ -10,7 +10,7 @@ import App from './pages/App';
 
 import './styles/reset.css';
 import './styles/layout.css';
-import './styles/shaping.css';
+// import './styles/shaping.css';
 import './styles/colors.css';
 import './styles/typo.css';
 

@@ -7,10 +7,10 @@ import menu from '../icons/menu.svg';
 const PageNav = () => {
     const linkNames = ['Home', 'Shop', 'Cart'];
     let navLinks = [];
-    const linkList = document.getElementById('menu-links');
+    const linkList = document.getElementById('page-nav');
 
     function toggleNavLinks() {
-        linkList.classList.toggle('flex');
+        linkList.classList.toggle('show');
         linkList.classList.toggle('hide');
     }
 
@@ -38,7 +38,7 @@ const PageNav = () => {
     return (
         <>
             <img role='button' id='toggle-page-nav' src={menu} alt='toggle page nav' onClick={toggleNavLinks} />
-            <nav id='page-nav' className='make-flex'>
+            <nav id='page-nav' className='show'>
                 {navLinks}
             </nav>
         </>

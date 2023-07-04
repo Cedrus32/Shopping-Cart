@@ -1,0 +1,71 @@
+:root {
+    --light: #E1E2E3;
+    --lighter: #F0F1F2;
+    --lightest: #FCFEFF;
+    --dark: #181E25;
+    --nav: #2D4149;
+    --accent: #C7994C;
+}
+
+body {
+    background-color: var(--lighter);
+    color: var(--dark);
+}
+
+    a {
+        color: var(--dark);
+        position: relative;
+        height: auto;
+        width: auto;
+    }
+
+    a.active {
+        color: var(--lightest);
+    }
+
+        a.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-0.25em) translateY(-0.25em);
+            z-index: -1;
+            height: calc(100% + 0.5em);
+            width: calc(100% + 0.5em);
+            padding: 0.5em;
+            background-color: var(--accent);
+            border-radius: 0.5em;
+        }
+
+    nav {
+        background-color: var(--nav);
+    }
+
+        #menu-links {
+           backdrop-filter: blur(5px);
+           border-top: 1.5px solid var(--nav);
+        }
+
+        .cart-summary {
+            color: var(--lightest);
+        }
+
+    .decrement,
+    .increment {
+        background-color: var(--lighter)
+    }
+
+    input {
+        background-color: var(--lightest);
+    }
+
+    .add,
+    .remove {
+        padding: 0.5em;
+        border: none;
+        border-radius: 0.5em;
+    }
+
+    .add {
+        background-color: var(--accent)
+    }
