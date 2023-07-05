@@ -36,17 +36,22 @@ a {
 }
 
 /* DISPLAY */
+
 #app {
     display: grid;
 }
 
 main,
+.content,
+article,
 menu,
 #category-nav {
     display: flex;
 }
 
 main,
+.content,
+article,
 main menu {
     flex-flow: column;
 }
@@ -54,7 +59,8 @@ main menu {
 /* UNIFORM SPACING */
 
 menu,
-#page-nav {
+#page-nav,
+article {
     padding: var(--page-padding);
 }
 
@@ -98,6 +104,20 @@ body {
                     flex-wrap: wrap;
                     justify-content: center;
                 }
+
+            .content {
+                gap: var(--content-gap);
+            }
+
+                article {
+                    height: auto;
+                    width: 100%;
+                }
+
+                    .content img {
+                        width: 100%;
+                        margin-bottom: var(--nav-gap);
+                    }
 
         menu {
             grid-area: menu;

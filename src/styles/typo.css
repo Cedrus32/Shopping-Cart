@@ -17,3 +17,7 @@ a {
 #category-nav {
     font-size: 1.15em;
 }
+
+article #title {
+    font-weight: bold;
+}
