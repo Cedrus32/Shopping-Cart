@@ -38,34 +38,38 @@ a {
 
 /* DISPLAY */
 
-#app {
+#app,
+.item-line {
     display: grid;
 }
 
 main,
-.content,
-article,
 menu,
+.content,
 #category-nav,
+.item-card,
+#change-quantity,
 #item-action,
-#change-quantity {
+#cart-list {
     display: flex;
 }
 
 main,
-.content,
-article,
 main menu,
-#item-action {
+.content,
+.item-card,
+#item-action,
+#cart-list,
+.item-line #change-quantity {
     flex-flow: column;
 }
 
 /* UNIFORM SPACING */
 
+#page-nav,
 #site-menu,
 #category-menu,
-#page-nav,
-article {
+.item-card {
     padding: var(--page-padding);
 }
 
@@ -123,7 +127,7 @@ body {
                     padding: var(--page-padding);
                 }
 
-                article {
+                .item-card {
                     height: auto;
                     width: 100%;
                 }
@@ -138,6 +142,8 @@ body {
                 }
 
                     #change-quantity {
+                        justify-content: center;
+                        align-items: center;
                         gap: var(--small-gap);
                     }
 
@@ -163,6 +169,50 @@ body {
                         height: 1em;
                         width: 1em;
                     }
+
+                #cart-list {
+                    gap: var(--med-gap);
+                }
+
+                    .item-line {
+                        grid-template-columns: 6em 0.5fr 0.5fr 2em;
+                        grid-template-rows: 2em 2em 2em;
+                        grid-template-areas: 'image title title    action'
+                                             'image price price    action'
+                                             'image count subtotal remove';
+                        column-gap: var(--small-gap);
+                        padding: var(--small-gap);
+                    }
+
+                        .item-img {
+                            grid-area: image;
+                            height: 100%;
+                            width: 100%;
+                        }
+
+                        .title {
+                            grid-area: title;
+                        }
+
+                        .price {
+                            grid-area: price;
+                        }
+
+                        .subtotal {
+                            grid-area: subtotal;
+                        }
+
+                        .count {
+                            grid-area: count;
+                        }
+
+                        .item-line #change-quantity {
+                            grid-area: action;
+                        }
+
+                        #remove-item {
+                            grid-area: remove;
+                        }
 
         #site-menu {
             grid-area: menu;

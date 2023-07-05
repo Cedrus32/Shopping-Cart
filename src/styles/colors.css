@@ -28,13 +28,13 @@ body {
 }
 
     #category-menu,
-    article,
+    .item-card,
     #item-view img {
         background-color: var(--lightest);
     }
 
     #category-menu,
-    article,
+    .item-card,
     #item-view img,
     input,
     #change-quantity button {
@@ -55,6 +55,11 @@ body {
 
         button {
             border: none;
+            border-radius: var(--b-rad);
+        }
+
+        .item-line {
+            border: 1px solid var(--dark);
             border-radius: var(--b-rad);
         }
 

@@ -27,10 +27,10 @@ const Cart = (props) => {
     return (
         <>
             <h1 data-testid='page-title'>Your Cart</h1>
-            <section id='content' className='cart-view'>
-                <div className='cart-list'>
+            <section id='cart-view' className='content'>
+                <section id='cart-list'>
                     {items}
-                </div>
+                </section>
                 <CartFooter cartTotal={total} alertCheckout={alertCheckout} />
             </section>
         </>

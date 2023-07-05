@@ -10,15 +10,15 @@ const ItemLine = (props) => {
     let subtotal = data.price * data.count;
 
     return (
-       <div className='item-line'>
+       <article className='item-line'>
             <img src={data.image} alt={data.title} className='item-img' />
-            <span className='title'>{data.title}</span>
-            <span className='price'>Price: {data.price}</span>
-            <span className='subtotal'>Sub: {subtotal}</span>
-            <span className='count'>Quant: {data.count}</span>
+            <p className='title'>{data.title}</p>
+            <p className='price'>Price: {data.price}</p>
+            <p className='subtotal'>Sub: {subtotal}</p>
+            <p className='count'>Quant: {data.count}</p>
             <Counter updateItem={updateItem} id={data.id} count={data.count}/>
             <RemoveButton location='cart' removeItem={removeItem} id={data.id}/>
-        </div>
+        </article>
     )
 }
 ItemLine.propTypes = {
