@@ -45,12 +45,14 @@ a {
 
 main,
 menu,
+button,
 .content,
 #category-nav,
 .item-card,
 #change-quantity,
 #item-action,
-#cart-list {
+#cart-list,
+footer {
     display: flex;
 }
 
@@ -60,7 +62,8 @@ main menu,
 .item-card,
 #item-action,
 #cart-list,
-.item-line #change-quantity {
+.item-line #change-quantity,
+footer {
     flex-flow: column;
 }
 
@@ -75,6 +78,11 @@ main menu,
 
 main {
     padding: var(--page-padding) var(--page-padding) var(--menu-height);
+}
+
+button {
+    justify-content: center;
+    align-items: center;
 }
 
 /* LAYOUTS */
@@ -115,6 +123,7 @@ body {
                 }
 
             .content {
+                width: 100%;
                 gap: var(--large-gap);
             }
 
@@ -157,18 +166,18 @@ body {
                         }
 
                     #remove-item,
-                    #add-item {
+                    #add-item,
+                    #checkout {
                         width: auto;
                         padding: var(--small-gap);
                     }
 
-
-                    #item-action img {
-                        margin: 0;
-                        padding: 0;
-                        height: 1em;
-                        width: 1em;
-                    }
+                        #remove-item img {
+                            margin: 0;
+                            padding: 0;
+                            height: 1em;
+                            width: 1em;
+                        }
 
                 #cart-list {
                     gap: var(--med-gap);
@@ -189,6 +198,10 @@ body {
                             height: 100%;
                             width: 100%;
                         }
+
+                            .item-line .item-img {
+                                margin: 0;
+                            }
 
                         .title {
                             grid-area: title;
@@ -213,6 +226,11 @@ body {
                         #remove-item {
                             grid-area: remove;
                         }
+
+                footer {
+                    align-self: start;
+                    gap: var(--small-gap);
+                }
 
         #site-menu {
             grid-area: menu;

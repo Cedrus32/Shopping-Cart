@@ -37,7 +37,8 @@ body {
     .item-card,
     #item-view img,
     input,
-    #change-quantity button {
+    #change-quantity button,
+    #item-view #remove-item {
         border: var(--b-width) solid var(--dark);
         border-radius: var(--b-rad);
     }
@@ -48,7 +49,8 @@ body {
             border-radius: 0;
         }
 
-        #add-item {
+        #add-item,
+        #checkout {
             background-color: var(--accent);
             color: var(--lightest);
         }

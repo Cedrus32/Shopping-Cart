@@ -5,7 +5,7 @@ const CheckoutButton = (props) => {
     const { alertCheckout } = props;
 
     return (
-        <button type='button' onClick={alertCheckout}>Checkout</button>
+        <button id='checkout' type='button' onClick={alertCheckout}>Checkout</button>
     )
 };
 CheckoutButton.propTypes = {
