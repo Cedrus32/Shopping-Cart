@@ -14,7 +14,7 @@ const Menu = (props) => {
     const navigate = useNavigate();
 
     return (
-        <menu>
+        <menu id='site-menu'>
             <PageNav />
             <img role='navigation' id='nav-back' className='navigate' src={backward} alt={'Previous Page'} onClick={() => navigate(-1)} />
             <img role='navigation' id='nav-home' src={logo} alt={'Odin Shop Home'} onClick={() => navigate('/')} />

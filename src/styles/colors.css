@@ -27,20 +27,38 @@ body {
     color: var(--text);
 }
 
-
-    main menu {
+    #category-menu,
+    article,
+    #item-view img {
         background-color: var(--lightest);
+    }
+
+    #category-menu,
+    article,
+    #item-view img,
+    input,
+    #change-quantity button {
         border: var(--b-width) solid var(--dark);
         border-radius: var(--b-rad);
     }
 
-    article {
-        background-color: var(--lightest);
-        border: var(--b-width) solid var(--dark);
-        border-radius: var(--b-rad);
-    }
+        #item-action img {
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+        }
 
-    menu {
+        #add-item {
+            background-color: var(--accent);
+            color: var(--lightest);
+        }
+
+        button {
+            border: none;
+            border-radius: var(--b-rad);
+        }
+
+    #site-menu {
         background-color: var(--dark);
     }
 
@@ -50,5 +68,7 @@ body {
         }
 
         #cart-item-count {
+            background-color: red;
             color: var(--lightest);
+            border-radius: 50%;
         }

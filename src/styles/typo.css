@@ -14,10 +14,21 @@ a {
     font-size: 1.25em;
 }
 
+#cart-item-count {
+    text-align: center;
+    vertical-align: middle;
+}
+
 #category-nav {
     font-size: 1.15em;
 }
 
 article #title {
     font-weight: bold;
+}
+
+input,
+#change-quantity {
+    text-align: center;
+    vertical-align: middle;
 }
