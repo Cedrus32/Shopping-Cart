@@ -10,7 +10,7 @@
 }
 
 a {
-    color: var(--dark);
+    color: var(--text);
 }
 
     a.active {
@@ -24,7 +24,7 @@ a {
 
 body {
     background-color: var(--lighter);
-    color: var(--dark);
+    color: var(--text);
 }
 
 
@@ -39,7 +39,7 @@ body {
     }
 
         #page-nav {
-            backdrop-filter: blue(5px);
+            backdrop-filter: blur(5px);
             border-top: var(--b-width) solid var(--dark);
         }
 
