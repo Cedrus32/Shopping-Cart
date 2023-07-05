@@ -5,6 +5,8 @@
     --text: #181E25;
     --dark: #2D4149;
     --accent: #C7994C;
+    --b-width: 1.5px;
+    --b-rad: 0.5em;
 }
 
 a {
@@ -17,7 +19,7 @@ a {
 
     a.active::before {
         background-color: var(--accent);
-        border-radius: 0.5em;
+        border-radius: var(--b-rad);
     }
 
 body {
@@ -25,13 +27,20 @@ body {
     color: var(--dark);
 }
 
+
+    main menu {
+        background-color: var(--lightest);
+        border: var(--b-width) solid var(--dark);
+        border-radius: var(--b-rad);
+    }
+
     menu {
         background-color: var(--dark);
     }
 
         #page-nav {
             backdrop-filter: blue(5px);
-            border-top: 1.5px solid var(--dark);
+            border-top: var(--b-width) solid var(--dark);
         }
 
         #cart-item-count {

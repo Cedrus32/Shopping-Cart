@@ -41,11 +41,13 @@ a {
 }
 
 main,
-menu {
+menu,
+#category-nav {
     display: flex;
 }
 
-main {
+main,
+main menu {
     flex-flow: column;
 }
 
@@ -85,6 +87,17 @@ body {
             overflow: auto;
             gap: var(--content-gap);
         }
+
+            main menu {
+                align-items: Center;
+                gap: var(--content-gap);
+            }
+            
+                #category-nav {
+                    gap: 1em;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
 
         menu {
             grid-area: menu;
