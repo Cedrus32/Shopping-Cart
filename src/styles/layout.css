@@ -131,6 +131,11 @@ body {
                 gap: var(--large-gap);
             }
 
+                #welcome-message {
+                    position: relative;
+                    top: 50%;
+                }
+
                 .content img {
                     width: 100%;
                     margin-bottom: var(--med-gap);
@@ -287,8 +292,9 @@ body {
 
 @media only screen and (min-width: 768px) {
     #item-view {
+        width: auto;
         display: grid;
-        grid-template-columns: calc(50vw / 1.5) auto;
+        grid-template-columns: calc(50vw / 2 ) minmax(min-content, 1fr);
         grid-template-rows: auto auto auto 1fr;
         grid-template-areas: 'title title'
                              'image description'
@@ -303,7 +309,7 @@ body {
         #item-view img {
             grid-area: image;
             height: auto;
-            width: 90%;
+            width: 100%;
             justify-self: center;
         }
 
