@@ -1,19 +1,19 @@
 {
-  "name": "TOP Shopping Cart",
+  "name": "Shopping-Cart",
   "version": "1.0.0",
   "description": "",
-  "private": false,
+  "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "watch": "webpack --watch",
     "test": "jest --silent false",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
-  "homepage": "https://cedrus32.github.io/Shopping-Cart/",
+  "homepage": "https://cedrus32.github.io/Shopping-Cart",
   "license": "ISC",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
