@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
 
 import ItemLine from '../components/ItemLine';
+import EmptyCart from '../components/EmptyCart';
 import CartFooter from '../components/CartFooter';
 
 const Cart = (props) => {
@@ -17,6 +18,10 @@ const Cart = (props) => {
         });
         string = string.concat(`~~ Your Total: ${total} ~~`);
         alert(string);
+    }
+
+    if (cart.length === 0) {
+        items.push(<EmptyCart />);
     }
 
     cart.forEach(item => {
