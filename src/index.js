@@ -19,7 +19,7 @@ app.render(
         <StoreProvider>
             <CartProvider>
                 <ViewProvider>
-                    <HashRouter>
+                    <HashRouter basename='/'>
                         <App />
                     </HashRouter>
                 </ViewProvider>
