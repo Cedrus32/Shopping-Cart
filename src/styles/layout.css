@@ -10,6 +10,7 @@
 
 a {
     position: relative;
+    z-index: 0;
     height: auto;
     width: auto;
 }
@@ -165,10 +166,14 @@ body {
                             width: 1.5em;
                         }
 
-                    #remove-item,
+                        input {
+                            height: 1.5em;
+                        }
+
+                    #item-view #remove-item,
                     #add-item,
                     #checkout {
-                        width: auto;
+                        width: 10em;
                         padding: var(--small-gap);
                     }
 
@@ -251,7 +256,7 @@ body {
             }
 
             #site-menu img {
-                height: 100%;
+                height: 90%;
             }
 
                 #nav-back {

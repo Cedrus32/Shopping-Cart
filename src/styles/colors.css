@@ -61,9 +61,14 @@ body {
         }
 
         .item-line {
+            background-color: var(--lightest);
             border: 1px solid var(--dark);
             border-radius: var(--b-rad);
         }
+
+            .item-line button {
+                background-color: var(--lightest);
+            }
 
     #site-menu {
         background-color: var(--dark);

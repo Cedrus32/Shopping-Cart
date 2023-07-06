@@ -15,8 +15,9 @@ a {
 }
 
 #cart-item-count {
+    font-size: 0.95em;
     text-align: center;
-    vertical-align: middle;
+    padding-top: 0.50vh;
 }
 
 #category-nav {
@@ -33,8 +34,17 @@ input,
     vertical-align: middle;
 }
 
-.title {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+.item-line span {
+    margin-top: auto;
+    margin-bottom: auto;
 }
+
+    .title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .subtotal {
+        text-align: end;
+    }

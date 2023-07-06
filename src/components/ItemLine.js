@@ -12,10 +12,10 @@ const ItemLine = (props) => {
     return (
        <article className='item-line'>
             <img src={data.image} alt={data.title} className='item-img' />
-            <p className='title'>{data.title}</p>
-            <p className='price'>Price: {data.price}</p>
-            <p className='subtotal'>Sub: {subtotal}</p>
-            <p className='count'>Quant: {data.count}</p>
+            <span className='title'>{data.title}</span>
+            <span className='price'>Price: {data.price}</span>
+            <span className='subtotal'>Sub: {subtotal}</span>
+            <span className='count'>Quant: {data.count}</span>
             <Counter updateItem={updateItem} id={data.id} count={data.count}/>
             <RemoveButton location='cart' removeItem={removeItem} id={data.id}/>
         </article>
