@@ -13,6 +13,7 @@
   },
   "keywords": [],
   "author": "",
+  "main": "index.js",
   "homepage": "https://cedrus32.github.io/Shopping-Cart/#",
   "license": "ISC",
   "devDependencies": {
