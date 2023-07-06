@@ -8,11 +8,9 @@ import formatCurrency from '../scripts/currency';
 const CartFooter = (props) => {
     const { cartTotal, alertCheckout } = props;
 
-    const total = formatCurrency(cartTotal);
-
     return (
         <footer>
-            <p>Total {total}</p>
+            <p>Total {formatCurrency(cartTotal)}</p>
             <CheckoutButton alertCheckout={alertCheckout} />
         </footer>
     )

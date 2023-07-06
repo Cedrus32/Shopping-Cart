@@ -8,6 +8,8 @@ import Counter from '../components/Counter';
 import AddButton from '../components/AddButton';
 import RemoveButton from '../components/RemoveButton';
 
+import formatCurrency from '../scripts/currency';
+
 const ItemView = (props) => {
     const { id } = useParams();
     const { setView, cartItem, addItem, removeItem, updateItem } = props;
@@ -27,7 +29,7 @@ const ItemView = (props) => {
             <section id='item-view' className='content'>
                 <img src={data.image} alt={data.title} />
                 <h1 data-testid='page-title'>{data.title}</h1>
-                <p id='price'>${data.price}</p>
+                <p id='price'>{formatCurrency(data.price)}</p>
                 <p id='description'>{data.description}</p>
                 <menu id='item-action'>
                     {counter}
