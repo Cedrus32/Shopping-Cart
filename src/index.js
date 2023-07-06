@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import StorageProvider from './contexts/StorageContext';
 import StoreProvider from './contexts/StoreContext';
@@ -10,7 +10,6 @@ import App from './pages/App';
 
 import './styles/reset.css';
 import './styles/layout.css';
-// import './styles/shaping.css';
 import './styles/colors.css';
 import './styles/typo.css';
 
@@ -20,9 +19,9 @@ app.render(
         <StoreProvider>
             <CartProvider>
                 <ViewProvider>
-                    <HashRouter>
+                    <BrowserRouter>
                         <App />
-                    </HashRouter>
+                    </BrowserRouter>
                 </ViewProvider>
             </CartProvider>
         </StoreProvider>

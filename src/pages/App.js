@@ -10,6 +10,7 @@ import Shop from './Shop';
 import CategoryView from './CategoryView';
 import ItemView from './ItemView';
 import Cart from './Cart';
+import NotFound from './NotFound';
 
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
                         <Route path='product/:id' element={<ItemView setView={setView} cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
                     </Route>
                     <Route path='cart' element={<Cart cart={cart} removeItem={removeItem} updateItem={updateItem} />} />
+                    <Route path='*' element={<NotFound />} status={404} />
                 </Routes>
             </main>
         </>

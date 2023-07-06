@@ -1,8 +1,8 @@
 {
-  "name": "react-test",
+  "name": "TOP Shopping Cart",
   "version": "1.0.0",
   "description": "",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "watch": "webpack --watch",

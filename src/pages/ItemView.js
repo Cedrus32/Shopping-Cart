@@ -13,7 +13,12 @@ import formatCurrency from '../scripts/currency';
 const ItemView = (props) => {
     const { id } = useParams();
     const { setView, cartItem, addItem, removeItem, updateItem } = props;
-    const { exists, data } = useGetItem({setView: setView, cartItem: cartItem, id: id});
+    const { exists = null, data = {
+        image: null,
+        title: null,
+        price: null,
+        description: null,
+    } } = useGetItem({setView: setView, cartItem: cartItem, id: id});
     let counter;
     let button;
 
