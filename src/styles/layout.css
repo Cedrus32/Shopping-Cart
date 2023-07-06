@@ -288,7 +288,7 @@ body {
 @media only screen and (min-width: 768px) {
     #item-view {
         display: grid;
-        grid-template-columns: calc(50vw - var(--menu-height)) auto;
+        grid-template-columns: calc(50vw / 1.5) auto;
         grid-template-rows: auto auto auto 1fr;
         grid-template-areas: 'title title'
                              'image description'
@@ -300,8 +300,11 @@ body {
             grid-area: title;
         }
 
-        img {
+        #item-view img {
             grid-area: image;
+            height: auto;
+            width: 90%;
+            justify-self: center;
         }
 
         #description {
@@ -317,6 +320,11 @@ body {
             grid-area: action;
             align-self: start;
         }
+
+            #item-action img {
+                height: 1em;
+                width: 1em;
+            }
 
     #cart-view {
         display: grid;
