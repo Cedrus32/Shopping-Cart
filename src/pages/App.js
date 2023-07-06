@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import useCart from '../hooks/useCart';
 import { ViewContext } from '../contexts/ViewContext';
@@ -25,7 +25,7 @@ const App = () => {
     const { view, setView } = useContext(ViewContext);
 
     return (
-        <>
+        <HashRouter basename='/'>
             <Menu count={getCount()} />
             <main>
                 <Routes>
@@ -38,7 +38,7 @@ const App = () => {
                     <Route path='*' element={<NotFound />} status={404} />
                 </Routes>
             </main>
-        </>
+        </HashRouter>
     )
 };
 

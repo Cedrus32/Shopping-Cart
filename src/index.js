@@ -1,6 +1,5 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { HashRouter } from 'react-router-dom';
 
 import StorageProvider from './contexts/StorageContext';
 import StoreProvider from './contexts/StoreContext';
@@ -19,9 +18,7 @@ app.render(
         <StoreProvider>
             <CartProvider>
                 <ViewProvider>
-                    <HashRouter basename='/'>
                         <App />
-                    </HashRouter>
                 </ViewProvider>
             </CartProvider>
         </StoreProvider>
