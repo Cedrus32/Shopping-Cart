@@ -29,13 +29,13 @@ const App = () => {
             <Menu count={getCount()} />
             <main>
                 <Routes>
-                    <Route index element={<Landing />} />
-                    <Route path='shop' element={<Shop />}>
+                    <Route index path='/' element={<Landing />} />
+                    <Route path='/shop' element={<Shop />}>
                         <Route path=':category' element={<CategoryView />} />
                         <Route path='product/:id' element={<ItemView setView={setView} cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
                     </Route>
-                    <Route path='cart' element={<Cart cart={cart} removeItem={removeItem} updateItem={updateItem} />} />
-                    <Route path='*' element={<NotFound />} status={404} />
+                    <Route path='/cart' element={<Cart cart={cart} removeItem={removeItem} updateItem={updateItem} />} />
+                    <Route path='/*' element={<NotFound />} status={404} />
                 </Routes>
             </main>
         </HashRouter>
