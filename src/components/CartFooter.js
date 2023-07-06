@@ -3,12 +3,16 @@ import PropTypes from 'prop-types';
 
 import CheckoutButton from './CheckoutButton';
 
+import formatCurrency from '../scripts/currency';
+
 const CartFooter = (props) => {
     const { cartTotal, alertCheckout } = props;
 
+    const total = formatCurrency(cartTotal);
+
     return (
         <footer>
-            <p>Total {cartTotal}</p>
+            <p>Total {total}</p>
             <CheckoutButton alertCheckout={alertCheckout} />
         </footer>
     )

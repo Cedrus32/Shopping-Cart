@@ -27,7 +27,7 @@ const ItemView = (props) => {
             <section id='item-view' className='content'>
                 <img src={data.image} alt={data.title} />
                 <h1 data-testid='page-title'>{data.title}</h1>
-                <p id='price'>{data.price}</p>
+                <p id='price'>${data.price}</p>
                 <p id='description'>{data.description}</p>
                 <menu id='item-action'>
                     {counter}

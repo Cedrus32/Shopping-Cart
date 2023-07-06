@@ -11,7 +11,7 @@ const ItemCard = (props) => {
         <article className='item-card' data-id={data.id} onClick={() => navigate(navQuery)}>
             <img src={data.image} alt={data.title} />
             <p id='title'>{data.title}</p>
-            <p id='price'>{data.price}</p>
+            <p id='price'>${data.price}</p>
         </article>
     )
 }
