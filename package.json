@@ -7,10 +7,13 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "watch": "webpack --watch",
     "test": "jest --silent false",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
+  "homepage": "https://cedrus32.github.io/Shopping-Cart/",
   "license": "ISC",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -35,6 +38,7 @@
     "webpack-dev-server": "^4.13.2"
   },
   "dependencies": {
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
