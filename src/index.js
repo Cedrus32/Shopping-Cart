@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import StorageProvider from './contexts/StorageContext';
 import StoreProvider from './contexts/StoreContext';
@@ -20,9 +20,9 @@ app.render(
         <StoreProvider>
             <CartProvider>
                 <ViewProvider>
-                    <BrowserRouter>
+                    <HashRouter>
                         <App />
-                    </BrowserRouter>
+                    </HashRouter>
                 </ViewProvider>
             </CartProvider>
         </StoreProvider>
