@@ -272,14 +272,8 @@ body {
                 height: 90%;
             }
 
-                #nav-back {
-                    margin-left: auto;
-                    padding-right: calc(var(--page-padding) * 2);
-                }
-
-                #nav-forward {
-                    margin-right: auto;
-                    padding-left: calc(var(--page-padding) * 2);
+                #nav-home {
+                    margin: 0 auto;
                 }
 
             #cart-item-count {
