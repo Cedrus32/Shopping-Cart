@@ -14,7 +14,7 @@
   "keywords": [],
   "author": "",
   "main": "index.js",
-  "homepage": "https://cedrus32.github.io/Shopping-Cart/#",
+  "homepage": "https://cedrus32.github.io/Shopping-Cart",
   "license": "ISC",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
