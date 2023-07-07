@@ -15,7 +15,12 @@ const PageNav = () => {
     }
 
     function createNavLink(name) {
-        let navQuery = `/${name.toLowerCase()}`;
+        let navQuery;
+        if (name === 'Home') {
+            navQuery = '/'
+        } else {
+            navQuery = `/${name.toLowerCase()}`;
+        }
         return (
             <NavLink key={uniqid()} to={navQuery}>{name}</NavLink>
         );

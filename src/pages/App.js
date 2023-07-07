@@ -5,12 +5,12 @@ import useCart from '../hooks/useCart';
 import { ViewContext } from '../contexts/ViewContext';
 
 import Menu from '../components/Menu';
+import NotFound from '../components/NotFound';
 import Landing from './Landing';
 import Shop from './Shop';
 import CategoryView from './CategoryView';
 import ItemView from './ItemView';
 import Cart from './Cart';
-import NotFound from './NotFound';
 
 
 const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
             <Menu count={getCount()} />
             <main>
                 <Routes>
-                    <Route index path='/home' element={<Landing />} />
+                    <Route index path='/' element={<Landing />} />
                     <Route path='/shop' element={<Shop />}>
                         <Route path=':category' element={<CategoryView />} />
                         <Route path='product/:id' element={<ItemView setView={setView} cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />

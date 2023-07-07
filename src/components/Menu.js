@@ -18,7 +18,7 @@ const Menu = (props) => {
     return (
         <menu id='site-menu'>
             <PageNav />
-            <img role='navigation' id='nav-home' src={logo} alt={'Odin Shop Home'} onClick={() => navigate('/home')} />
+            <img role='navigation' id='nav-home' src={logo} alt={'Odin Shop Home'} onClick={() => navigate('/')} />
             <CartSummary count={count}/>
         </menu>
     )
