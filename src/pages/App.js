@@ -25,7 +25,7 @@ const App = () => {
     const { view, setView } = useContext(ViewContext);
 
     return (
-        <HashRouter basename='/Shopping-Cart'>
+        <HashRouter basename='/'>
             <Menu count={getCount()} />
             <main>
                 <Routes>
