@@ -13,8 +13,6 @@ const Menu = (props) => {
     const { count } = props;
     const navigate = useNavigate();
 
-    console.log(window.history);
-
     return (
         <menu id='site-menu'>
             <PageNav />

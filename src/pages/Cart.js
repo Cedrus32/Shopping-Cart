@@ -21,7 +21,7 @@ const Cart = (props) => {
     }
 
     if (cart.length === 0) {
-        items.push(<EmptyCart />);
+        items.push(<EmptyCart key={uniqid()}/>);
     }
 
     cart.forEach(item => {
