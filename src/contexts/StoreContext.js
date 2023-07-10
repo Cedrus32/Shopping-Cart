@@ -1,10 +1,10 @@
 import React, { useState, useEffect, createContext } from 'react';
 import PropTypes from 'prop-types';
 
-export const StoreContext = createContext([]);
+export const StoreContext = createContext(null);
 
 const StoreProvider = (props) => {
-    const [ store, setStore ] = useState([]);
+    const [ store, setStore ] = useState(null);
 
     useEffect(() => {
         // const fetchData = async() => {
@@ -43,7 +43,7 @@ const StoreProvider = (props) => {
             {
                 id: 4,
                 category: "women's clothing",
-                title: "Men's Clothing 2",
+                title: "Women's Clothing 2",
                 price: 400,
                 description: 'description',
                 image: 'imageURL',
@@ -84,11 +84,13 @@ const StoreProvider = (props) => {
         setStore(mockFetch);
     }, []);
 
-    return (
-        <StoreContext.Provider value={{ store }}>
-            {props.children}
-        </StoreContext.Provider>
-    )
+    if (store !== null) { // FIX: conditional does not prevent first (null) render of child elements
+        return (
+            <StoreContext.Provider value={{ store }}>
+                {props.children}
+            </StoreContext.Provider>
+        )
+    }
 };
 StoreProvider.propTypes = {
     children: PropTypes.element,
