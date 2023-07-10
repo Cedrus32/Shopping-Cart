@@ -38,6 +38,9 @@ const App = () => {
         <HashRouter basename='/'>
             <Menu />
             <main>
+                <Routes>
+                    <Route index path='/' element={<Landing />} />
+                </Routes>
             </main>
         </HashRouter>
     )
