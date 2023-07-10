@@ -1,28 +1,27 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import PageNav from './PageNav';
 import CartSummary from './CartSummary';
 
-import backward from '../icons/back.svg';
-import forward from '../icons/for.svg';
+import CountProvider from '../contexts/CountContext';
+
+// import backward from '../icons/back.svg'; // TODO: implement hashHistory
+// import forward from '../icons/for.svg'; // TODO: implement hashHistory 
 import logo from '../icons/odin-icon.svg';
 
-const Menu = (props) => {
-    const { count } = props;
+const Menu = () => {
     const navigate = useNavigate();
 
     return (
         <menu id='site-menu'>
             <PageNav />
             <img role='navigation' id='nav-home' src={logo} alt={'Odin Shop Home'} onClick={() => navigate('/')} />
-            <CartSummary count={count}/>
+            <CountProvider>
+                <CartSummary />
+            </CountProvider>
         </menu>
     )
 };
-Menu.propTypes = {
-    count: PropTypes.number,
-}
 
 export default Menu;

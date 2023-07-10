@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PropTypes from 'prop-types';
+
+import { CountContext } from '../contexts/CountContext';
 
 import basket from '../icons/basket.svg';
 
-const CartSummary = (props) => {
-    let { count } = props;
+const CartSummary = () => {
+    const { count } = useContext(CountContext);
+    console.log(count);
     const navigate = useNavigate();
     
     return (
@@ -15,8 +17,5 @@ const CartSummary = (props) => {
         </>
     )
 };
-CartSummary.propTypes = {
-    count: PropTypes.number,
-}
 
 export default CartSummary;
