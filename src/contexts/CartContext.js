@@ -8,7 +8,7 @@ export const CartContext = createContext([]);
 const CartProvider = (props) => {
     const { storageStatus } = useContext(StorageContext);
     const [ cart, setCart ] = useState([]);
-    const [ storagePulled, setStoragePulled ] = useState(false);
+    let storagePulled = false;
 
     useEffect(() => {
         if (storageStatus === true) {
@@ -17,7 +17,7 @@ const CartProvider = (props) => {
                 items.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
             }
             setCart(items);
-            setStoragePulled(true);
+            storagePulled = true;
         }
     }, []);
 
