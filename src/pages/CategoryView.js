@@ -1,31 +1,15 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useContext } from 'react';
 import uniqid from 'uniqid';
 
 import useGetCat from '../hooks/useGetCat';
+import { ViewContext } from '../contexts/ViewContext';
 
 import CatNav from '../components/CatNav';
 import ItemCard from '../components/ItemCard';
 
 const CategoryView = () => {
-    const { category } = useParams();
-    const { data } = useGetCat(category);
-    
-    function getPageTitle(value) {
-        if (value === "men's clothing") {
-            return "Men's Clothing";
-        } else if (value === "women's clothing") {
-            return "Women's Clothing";
-        } else if (value === 'jewelery') {
-            return 'Jewelery';
-        } else if (value === 'electronics') {
-            return 'Electronics';
-        } else {
-            return 'All';
-        }
-    }
-
-    const pageTitle = getPageTitle(category);
+    const { view } = useContext(ViewContext);
+    const { data } = useGetCat(view);
 
     let itemCards = [];
     data.forEach(item => {
@@ -35,7 +19,7 @@ const CategoryView = () => {
     return (
         <>
             <menu id='category-menu'>
-                <h1 data-test-id='page-title'>{pageTitle}</h1>
+                <h1 data-test-id='page-title'>{view}</h1>
                 <CatNav />
             </menu>
             <section id='category-view' className='content'>{itemCards}</section>

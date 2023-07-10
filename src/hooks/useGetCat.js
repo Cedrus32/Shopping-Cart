@@ -1,32 +1,22 @@
-import { useState, useRef, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 
 import { StoreContext } from '../contexts/StoreContext';
 
 const useGetCat = (props) => {
-    const category = props;
-    const catRef = useRef(null);
-    const [ data, setData ] = useState([]);
+    const view = props.toLowerCase();
     const { store } = useContext(StoreContext);
+    let data;
 
-    if (catRef.current !== category && store.length !== 0) {
-        catRef.current = category;
-        if (category === 'all') {
-            setData(store);
-        } else {
-            let itemData = [];
-            let items = store.filter(item => item.category === category);
-            items.forEach(item => {
-                itemData.push({id: item.id, title: item.title, price: item.price, image: item.image});
-            });
-            setData(itemData);
-        }
+    if (view === 'all') {
+        data = store;
+    } else {
+        let itemData = [];
+        let items = store.filter(item => item.category === view);
+        items.forEach(item => {
+            itemData.push({id: item.id, title: item.title, price: item.price, image: item.image});
+        });
+        data = itemData;
     }
-
-    useEffect(() => {
-        return () => {
-            catRef.current = null;
-        }
-    }, []);
 
     return {
         data,

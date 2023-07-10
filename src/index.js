@@ -4,7 +4,6 @@ import { createRoot } from 'react-dom/client';
 import StoreProvider from './contexts/StoreContext';
 import StorageProvider from './contexts/StorageContext';
 import CartProvider from './contexts/CartContext';
-import ViewProvider from './contexts/ViewContext';
 import App from './pages/App';
 
 import './styles/reset.css';
@@ -17,9 +16,7 @@ app.render(
     <StoreProvider>
         <StorageProvider>
             <CartProvider>
-                <ViewProvider>
-                        <App />
-                </ViewProvider>
+                    <App />
             </CartProvider>
         </StorageProvider>
     </StoreProvider>

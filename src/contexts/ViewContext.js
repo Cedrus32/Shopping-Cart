@@ -1,10 +1,10 @@
 import React, { useState, createContext } from 'react';
 import PropTypes from 'prop-types';
 
-export const ViewContext = createContext(null);
+export const ViewContext = createContext('All');
 
 const ViewProvider = (props) => {
-    const [ view, setView ] = useState(null);
+    const [ view, setView ] = useState('All');
 
         return (
             <ViewContext.Provider value={{ view, setView }}>
