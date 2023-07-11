@@ -1,17 +1,18 @@
 import { useContext } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { StoreContext } from '../contexts/StoreContext';
 
-const useGetCat = (props) => {
-    const view = props.toLowerCase();
+const useGetCat = () => {
+    const { category } = useParams();
     const { store } = useContext(StoreContext);
     let data;
 
-    if (view === 'all') {
+    if (category === 'all') {
         data = store;
     } else {
         let itemData = [];
-        let items = store.filter(item => item.category === view);
+        let items = store.filter(item => item.category === category);
         items.forEach(item => {
             itemData.push({id: item.id, title: item.title, price: item.price, image: item.image});
         });
