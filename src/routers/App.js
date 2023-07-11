@@ -1,32 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
-// import useCart from '../hooks/useCart'; // FIX: remove
 import ViewProvider from '../contexts/ViewContext';
 
 import Menu from '../components/Menu';
-import NotFound from '../components/NotFound';
-import Landing from './Landing';
-import Shop from './Shop';
-import CategoryView from './CategoryView';
-import ItemView from './ItemView';
-import Cart from './Cart';
+import Landing from '../pages/Landing';
+import CategoryView from '../pages/CategoryView';
+import ItemView from '../pages/ItemView';
+import Cart from '../pages/Cart';
+import NotFound from '../pages/NotFound';
+import Shop from '../routers/Shop';
 
 
 const App = () => {
-    // const { 
-    //     cart,
-    //     addItem,
-    //     removeItem,
-    //     updateItem,
-    //     getCount,
-    //     getItem,
-    // } = useCart();
-
-    // <Routes>
-    //     <Route path='*' element={<NotFound />} status={404} />
-    // </Routes>
-
     return (
         <HashRouter basename='/'>
             <Menu />
@@ -42,6 +28,7 @@ const App = () => {
                         <Route path='product/:id' element={<ItemView />} />
                     </Route>
                     <Route path='/cart' element={<Cart />} />
+                    <Route path='*' element={<NotFound />} status={404}/>
                 </Routes>
             </main>
         </HashRouter>

@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import StoreProvider from './contexts/StoreContext';
 import StorageProvider from './contexts/StorageContext';
 import CartProvider from './contexts/CartContext';
-import App from './pages/App';
+import App from './routers/App';
 
 import './styles/reset.css';
 import './styles/layout.css';
