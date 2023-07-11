@@ -18,10 +18,14 @@ const CategoryView = () => {
     }
 
     let pageTitle = getPageTitle(category);
-    let itemCards = [];
-    data.forEach(item => {
-        itemCards.push(<ItemCard key={uniqid()} data={item} />);
-    });
+    let content = [];
+    if (data.length === 0) {
+        content.push(<h2 key={uniqid()}>No items found.</h2>);
+    } else {
+        data.forEach(item => {
+            content.push(<ItemCard key={uniqid()} data={item} />);
+        });
+    }
 
     return (
         <>
@@ -29,7 +33,7 @@ const CategoryView = () => {
                 <h1 data-test-id='page-title'>{pageTitle}</h1>
                 <CatNav />
             </menu>
-            <section id='category-view' className='content'>{itemCards}</section>
+            <section id='category-view' className='content'>{content}</section>
         </>
     )
 };
