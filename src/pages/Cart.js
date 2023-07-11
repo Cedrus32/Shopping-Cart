@@ -1,5 +1,4 @@
 import React from 'react';
-import uniqid from 'uniqid';
 
 import useCart from '../hooks/useCart';
 
@@ -22,10 +21,10 @@ const Cart = () => {
     }
 
     if (cart.length === 0) {
-        items.push(<EmptyCart key={uniqid()}/>);
+        items.push(<EmptyCart key='empty-cart' />);
     } else {
         cart.forEach(item => {
-            items.push(<ItemLine key={uniqid()} data={item} removeItem={removeItem} updateItem={updateItem} />);
+            items.push(<ItemLine key={item.id} data={item} removeItem={removeItem} updateItem={updateItem} />);
             total += (item.price * item.count);
         });
     }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import uniqid from 'uniqid';
 
 import menu from '../icons/menu.svg';
 
@@ -14,7 +13,7 @@ const PageNav = () => {
         linkList.classList.toggle('hide');
     }
 
-    function createNavLink(name) {
+    function createNavLink(name, itemKey) {
         let navQuery;
         if (name === 'Home') {
             navQuery = '/'
@@ -22,12 +21,12 @@ const PageNav = () => {
             navQuery = `/${name.toLowerCase()}`;
         }
         return (
-            <NavLink key={uniqid()} to={navQuery}>{name}</NavLink>
+            <NavLink key={itemKey} to={navQuery}>{name}</NavLink>
         );
     }
 
-    linkNames.forEach(item => {
-        navLinks.push(createNavLink(item));
+    linkNames.forEach((item, index) => {
+        navLinks.push(createNavLink(item, index));
     });
 
     return (

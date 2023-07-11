@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import uniqid from 'uniqid';
 
 import useGetCat from '../hooks/useGetCat';
 
@@ -20,10 +19,10 @@ const CategoryView = () => {
     let pageTitle = getPageTitle(category);
     let content = [];
     if (data.length === 0) {
-        content.push(<h2 key={uniqid()}>No items found.</h2>);
+        content.push(<h2 key='not-found'>No items found.</h2>);
     } else {
         data.forEach(item => {
-            content.push(<ItemCard key={uniqid()} data={item} />);
+            content.push(<ItemCard key={item.id} data={item} />);
         });
     }
 

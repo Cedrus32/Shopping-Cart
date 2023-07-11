@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import uniqid from 'uniqid';
 
 import { ViewContext } from '../contexts/ViewContext';
 
@@ -9,15 +8,15 @@ const CatNav = () => {
     const linkNames = ['All', "Men's Clothing", "Women's Clothing", 'Jewelery', 'Electronics'];
     let navLinks = [];
 
-    function createNavLink(name) {
+    function createNavLink(name, itemKey) {
         let navQuery = `/shop/${name.toLowerCase()}`;
         return (
-            <NavLink key={uniqid()} to={navQuery} onClick={() => setView(name)}>{name}</NavLink>
+            <NavLink key={itemKey} to={navQuery} onClick={() => setView(name)}>{name}</NavLink>
         )
     }
 
-    linkNames.forEach(item => {
-        navLinks.push(createNavLink(item));
+    linkNames.forEach((item, index) => {
+        navLinks.push(createNavLink(item, index));
     })
 
     return (
