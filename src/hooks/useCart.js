@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { CartContext } from '../contexts/CartContext';
 
 const useCart = () => {
-    const { cart, setCart, view, setView, storagePulled } = useContext(CartContext);
+    const { cart, setCart, storagePulled } = useContext(CartContext);
 
     // state setters
     function addItem(data) {
@@ -48,10 +48,9 @@ const useCart = () => {
         }
     }
     // state getters
-    function getCount() {
-        let sum = 0;
-        cart.forEach(item => sum += item.count);
-        return sum;
+    function itemExists(query) {
+        let item = cart.filter(item => item.id == query);
+        return item[0];
     }
     function getItem(query) {
         return cart.find(item => item.id == query);
@@ -59,11 +58,10 @@ const useCart = () => {
 
     return {
         cart,
-        view,
         addItem,
         removeItem,
         updateItem,
-        getCount,
+        itemExists,
         getItem,
     }
 }
