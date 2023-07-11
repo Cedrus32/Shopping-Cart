@@ -1,13 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
 
 import ItemLine from '../components/ItemLine';
 import EmptyCart from '../components/EmptyCart';
 import CartFooter from '../components/CartFooter';
 
-const Cart = (props) => {
-    const { cart, removeItem, updateItem } = props;
+import useCart from '../hooks/useCart';
+
+const Cart = () => {
+    const { cart, removeItem, updateItem } = useCart();
     let items = [];
     let total = 0;
 
@@ -22,12 +23,12 @@ const Cart = (props) => {
 
     if (cart.length === 0) {
         items.push(<EmptyCart key={uniqid()}/>);
+    } else {
+        cart.forEach(item => {
+            items.push(<ItemLine key={uniqid()} data={item} removeItem={removeItem} updateItem={updateItem} />);
+            total += (item.price * item.count);
+        });
     }
-
-    cart.forEach(item => {
-        items.push(<ItemLine key={uniqid()} data={item} removeItem={removeItem} updateItem={updateItem} />);
-        total += (item.price * item.count);
-    });
 
     return (
         <>
@@ -41,10 +42,5 @@ const Cart = (props) => {
         </>
     )
 };
-Cart.propTypes = {
-    cart: PropTypes.array,
-    removeItem: PropTypes.func,
-    updateItem: PropTypes.func,
-}
 
 export default Cart;

@@ -24,10 +24,6 @@ const App = () => {
     // } = useCart();
 
     // <Routes>
-    //     <Route path='/shop' element={<Shop />}>
-    //         <Route path='product/:id' element={<ItemView setView={setView} cartItem={getItem(view)} addItem={addItem} removeItem={removeItem} updateItem={updateItem} />} />
-    //     </Route>
-    //     <Route path='/cart' element={<Cart cart={cart} removeItem={removeItem} updateItem={updateItem} />} />
     //     <Route path='*' element={<NotFound />} status={404} />
     // </Routes>
 
@@ -45,6 +41,7 @@ const App = () => {
                         } />
                         <Route path='product/:id' element={<ItemView />} />
                     </Route>
+                    <Route path='/cart' element={<Cart />} />
                 </Routes>
             </main>
         </HashRouter>
