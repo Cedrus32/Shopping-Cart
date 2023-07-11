@@ -1,5 +1,4 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import useGetItem from '../hooks/useGetItem';
@@ -11,14 +10,7 @@ import RemoveButton from '../components/RemoveButton';
 import formatCurrency from '../scripts/currency';
 
 const ItemView = (props) => {
-    const { id } = useParams();
-    const { setView, cartItem, addItem, removeItem, updateItem } = props;
-    const { exists = null, data = {
-        image: null,
-        title: null,
-        price: null,
-        description: null,
-    } } = useGetItem({setView: setView, cartItem: cartItem, id: id});
+    const { exists, data, updateItem, removeItem, addItem } = useGetItem();
     let counter;
     let button;
 

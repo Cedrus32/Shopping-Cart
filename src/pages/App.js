@@ -43,6 +43,7 @@ const App = () => {
                                 <CategoryView />
                             </ViewProvider>
                         } />
+                        <Route path='product/:id' element={<ItemView />} />
                     </Route>
                 </Routes>
             </main>

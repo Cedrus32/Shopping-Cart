@@ -1,32 +1,19 @@
 import { useEffect, useContext } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { StoreContext } from '../contexts/StoreContext';
+import useCart from '../hooks/useCart';
 
-const useGetItem = (props) => {
-    const { setView, cartItem, id } = props;
+const useGetItem = () => {
+    const { id } = useParams();
     const { store } = useContext(StoreContext);
-    let data = {
-        id: null,
-        title: null,
-        description: null,
-        price: null,
-        count: null,
-        image: null,
-    };
-    let exists;
+    const { addItem, removeItem, updateItem, itemExists, getItem } = useCart();
+    const exists = itemExists(id);
+    let data;
 
-    useEffect(() => {
-        setView(id);
-        return () => {
-            setView(null);
-        }
-    }, []);
-
-    if (cartItem) {
-        exists = true;
-        data = cartItem;
+    if (exists) {
+        data = getItem(id);
     } else {
-        exists = false;
         let item = store.filter(item => item.id == id);
         data = item[0];
     }
@@ -34,6 +21,9 @@ const useGetItem = (props) => {
     return {
         exists,
         data,
+        updateItem,
+        removeItem,
+        addItem,
     }
 };
 
