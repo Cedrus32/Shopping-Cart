@@ -8,7 +8,7 @@ import Landing from '../pages/Landing';
 import CategoryView from '../pages/CategoryView';
 import ItemView from '../pages/ItemView';
 import Cart from '../pages/Cart';
-import NotFound from '../pages/NotFound';
+import PageNotFound from '../pages/PageNotFound';
 import Shop from '../routers/Shop';
 
 
@@ -28,7 +28,7 @@ const App = () => {
                         <Route path='product/:id' element={<ItemView />} />
                     </Route>
                     <Route path='/cart' element={<Cart />} />
-                    <Route path='*' element={<NotFound />} status={404}/>
+                    <Route path='*' element={<PageNotFound />} status={404}/>
                 </Routes>
             </main>
         </HashRouter>
