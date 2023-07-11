@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import formatCurrency from '../scripts/currency';
+
 import Counter from './Counter';
 import RemoveButton from './RemoveButton';
-
-import formatCurrency from '../scripts/currency';
 
 const ItemLine = (props) => {
     const { data, removeItem, updateItem } = props;

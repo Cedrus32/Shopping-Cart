@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CheckoutButton from './CheckoutButton';
-
 import formatCurrency from '../scripts/currency';
+
+import CheckoutButton from './CheckoutButton';
 
 const CartFooter = (props) => {
     const { cartTotal, alertCheckout } = props;

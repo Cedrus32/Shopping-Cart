@@ -1,11 +1,11 @@
 import React from 'react';
 import uniqid from 'uniqid';
 
+import useCart from '../hooks/useCart';
+
 import ItemLine from '../components/ItemLine';
 import EmptyCart from '../components/EmptyCart';
 import CartFooter from '../components/CartFooter';
-
-import useCart from '../hooks/useCart';
 
 const Cart = () => {
     const { cart, removeItem, updateItem } = useCart();

@@ -1,15 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import useGetItem from '../hooks/useGetItem';
+import formatCurrency from '../scripts/currency';
 
 import Counter from '../components/Counter';
 import AddButton from '../components/AddButton';
 import RemoveButton from '../components/RemoveButton';
 
-import formatCurrency from '../scripts/currency';
-
-const ItemView = (props) => {
+const ItemView = () => {
     const { exists, data, updateItem, removeItem, addItem } = useGetItem();
     let counter;
     let button;
@@ -36,12 +34,5 @@ const ItemView = (props) => {
         </>
     )
 };
-ItemView.propTypes = {
-    setView: PropTypes.func,
-    cartItem: PropTypes.object,
-    addItem: PropTypes.func,
-    removeItem: PropTypes.func,
-    updateItem: PropTypes.func,
-}
 
 export default ItemView;

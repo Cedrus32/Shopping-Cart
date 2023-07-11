@@ -1,8 +1,9 @@
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { StoreContext } from '../contexts/StoreContext';
 import useCart from '../hooks/useCart';
+
+import { StoreContext } from '../contexts/StoreContext';
 
 const useGetItem = () => {
     const { id } = useParams();

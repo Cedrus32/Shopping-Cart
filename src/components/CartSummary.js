@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { CountContext } from '../contexts/CountContext';
-
 import basket from '../icons/basket.svg';
+
+import { CountContext } from '../contexts/CountContext';
 
 const CartSummary = () => {
     const { count } = useContext(CountContext);
