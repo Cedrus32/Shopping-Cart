@@ -7,7 +7,6 @@ import { CountContext } from '../contexts/CountContext';
 
 const CartSummary = () => {
     const { count } = useContext(CountContext);
-    console.log(count);
     const navigate = useNavigate();
     
     return (

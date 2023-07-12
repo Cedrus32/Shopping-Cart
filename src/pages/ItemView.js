@@ -6,7 +6,6 @@ import Product from '../components/Product';
 import ProductNotFound from '../components/ProductNotFound';
 
 const ItemView = () => {
-    console.log('ITEM render');
     const { exists, data, updateItem, removeItem, addItem } = useGetItem();
 
     let content;

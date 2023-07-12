@@ -8,7 +8,6 @@ import ProductNotFound from '../components/ProductNotFound';
 import ItemCard from '../components/ItemCard';
 
 const CategoryView = () => {
-    console.log('CATEGORY render');
     const { category } = useParams()
     const { data } = useGetCat();
 
