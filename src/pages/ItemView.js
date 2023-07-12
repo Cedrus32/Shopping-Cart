@@ -16,9 +16,9 @@ const ItemView = () => {
     }
 
     return (
-        <>
+        <section id='item-view' className='content'>
             {content}
-        </>
+        </section>
     )
 };
 

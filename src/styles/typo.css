@@ -6,6 +6,13 @@ h1 {
     text-align: center;
 }
 
+#category-view h2,
+#item-view h2 {
+    text-align: center;
+    font-size: 2em;
+    margin: 0;
+}
+
 a {
     text-decoration: none;
 }

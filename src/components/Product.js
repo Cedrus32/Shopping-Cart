@@ -20,7 +20,7 @@ const Product = (props) => {
     }
 
     return (
-        <section id='item-view' className='content'>
+        <>
             <img src={data.image} alt={data.title} />
             <h1 data-testid='page-title'>{data.title}</h1>
             <p id='price'>{formatCurrency(data.price)}</p>
@@ -29,7 +29,7 @@ const Product = (props) => {
                 {counter}
                 {button}
             </menu>
-        </section>
+        </>
     )
 };
 Product.propTypes = {

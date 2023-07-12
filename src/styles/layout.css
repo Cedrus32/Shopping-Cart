@@ -114,7 +114,7 @@ body {
         }
 
             #category-menu {
-                align-items: Center;
+                align-items: Center; /* FIX: */
                 gap: var(--large-gap);
             }
             
@@ -153,6 +153,11 @@ body {
                     height: auto;
                     width: 100%;
                     max-width: 300px;
+                }
+
+                #item-view h2 {
+                    align-self: center;
+                    width: auto;
                 }
 
                 #item-action {
@@ -295,6 +300,10 @@ body {
                              'image price'
                              'image action'
     }
+
+        #item-view h2 {
+            width: max-content;
+        }
 
         h1 {
             grid-area: title;
