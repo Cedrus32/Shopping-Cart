@@ -113,17 +113,6 @@ body {
             gap: var(--large-gap);
         }
 
-            #category-menu {
-                align-items: Center; /* FIX: */
-                gap: var(--large-gap);
-            }
-            
-                #category-nav {
-                    gap: 1em;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                }
-
             .content {
                 justify-content: center;
                 align-items: start;
@@ -131,28 +120,39 @@ body {
                 gap: var(--large-gap);
             }
 
-                #welcome-message {
-                    position: relative;
-                    top: 50%;
-                }
-
                 .content img {
                     width: 100%;
                     margin-bottom: var(--med-gap);
                 }
 
-                #item-view img {
-                    padding: var(--page-padding);
+                #welcome-message {
+                    position: relative;
+                    top: 50%;
                 }
 
                 #category-view {
                     flex-wrap: wrap;
                 }
 
-                .item-card {
-                    height: auto;
-                    width: 100%;
-                    max-width: 300px;
+                    #category-menu {
+                        align-items: center;
+                        gap: var(--large-gap);
+                    }
+
+                        #category-nav {
+                            gap: 1em;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                        }
+
+                    .item-card {
+                        height: auto;
+                        width: 100%;
+                        max-width: 300px;
+                    }
+
+                #item-view img {
+                    padding: var(--page-padding);
                 }
 
                 #item-view h2 {
@@ -257,7 +257,6 @@ body {
 
         #site-menu {
             grid-area: menu;
-            /* justify-content: space-between; */
             align-items: center;
             z-index: 2;
             height: 100%;
