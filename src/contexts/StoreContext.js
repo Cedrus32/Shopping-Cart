@@ -84,6 +84,11 @@ const StoreProvider = (props) => {
         setStore(mockFetch);
     }, []);
 
+    function inStore(query) {
+        const bool = store.includes(item => item.id == query);
+        return bool;
+    }
+
     if (store !== null) { // FIX: conditional does not prevent first (null) render of child elements
         return (
             <StoreContext.Provider value={{ store }}>
