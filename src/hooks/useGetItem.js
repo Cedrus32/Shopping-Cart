@@ -1,22 +1,24 @@
-import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
 import useCart from '../hooks/useCart';
-
-import { StoreContext } from '../contexts/StoreContext';
+import useStore from '../hooks/useStore';
 
 const useGetItem = () => {
     const { id } = useParams();
-    const { store } = useContext(StoreContext);
-    const { addItem, removeItem, updateItem, itemExists, getItem } = useCart();
-    const exists = itemExists(id);
+    const { inStore, getStoreItem } = useStore();
+    const { addItem, removeItem, updateItem, inCart, getCartItem } = useCart();
     let data;
+    let exists = {inCart: null, inStore: null};
 
-    if (exists) {
-        data = getItem(id);
+    exists.inCart = inCart(id);
+    if (!exists.inCart) {
+        exists.inStore = inStore(id);
+        if (exists.inStore) {
+            data = getStoreItem(id);
+        }
     } else {
-        let item = store.filter(item => item.id == id);
-        data = item[0];
+        exists.inStore = true;
+        data = getCartItem(id);
     }
 
     return {
