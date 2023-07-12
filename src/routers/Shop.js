@@ -7,10 +7,10 @@ const Shop = () => {
     const path = useLocation().pathname;
 
     useEffect(() => {
-        if (path === '/shop') {
+        if (path === '/shop' || path === '/shop/') {
             navigate('/shop/all');
         }
-    }, [path]);
+    }, [path, navigate]);
 
     return (
         <>
