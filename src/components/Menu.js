@@ -11,6 +11,7 @@ import CountProvider from '../contexts/CountContext';
 import logo from '../icons/odin-icon.svg';
 
 const Menu = () => {
+    console.log('MENU render');
     const navigate = useNavigate();
 
     return (

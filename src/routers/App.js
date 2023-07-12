@@ -13,6 +13,7 @@ import Shop from '../routers/Shop';
 
 
 const App = () => {
+    console.log('APP render');
     return (
         <HashRouter basename='/'>
             <Menu />

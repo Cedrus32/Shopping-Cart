@@ -7,6 +7,7 @@ import EmptyCart from '../components/EmptyCart';
 import CartFooter from '../components/CartFooter';
 
 const Cart = () => {
+    console.log('CART render');
     const { cart, removeItem, updateItem } = useCart();
     let items = [];
     let total = 0;
