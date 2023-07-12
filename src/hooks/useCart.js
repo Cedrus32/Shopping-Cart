@@ -46,12 +46,18 @@ const useCart = () => {
             localStorage.setItem(query, JSON.stringify(item));
         }
     }
-    // state getters
-    function itemExists(query) {
-        let item = cart.filter(item => item.id == query);
-        return item[0];
+    // checkers
+    function inCart(query) {
+        let exists = false;
+        cart.forEach(item => {
+            if (item.id == query) {
+                exists = true;
+            }
+        });
+        return exists;
     }
-    function getItem(query) {
+    // getters
+    function getCartItem(query) {
         return cart.find(item => item.id == query);
     }
 
@@ -60,8 +66,8 @@ const useCart = () => {
         addItem,
         removeItem,
         updateItem,
-        itemExists,
-        getItem,
+        inCart,
+        getCartItem,
     }
 }
 
