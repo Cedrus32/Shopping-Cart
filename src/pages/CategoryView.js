@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import useGetCat from '../hooks/useGetCat';
 
 import CatNav from '../components/CatNav';
+import ProductNotFound from '../components/ProductNotFound';
 import ItemCard from '../components/ItemCard';
 
 const CategoryView = () => {
@@ -19,7 +20,7 @@ const CategoryView = () => {
     let pageTitle = getPageTitle(category);
     let content = [];
     if (data.length === 0) {
-        content.push(<h2 key='not-found'>No items found.</h2>);
+        content.push(<ProductNotFound key='not-found' />);
     } else {
         data.forEach(item => {
             content.push(<ItemCard key={item.id} data={item} />);
