@@ -17,8 +17,6 @@ const StoreProvider = (props) => {
         fetchData();
     }, []);
 
-    console.log(store);
-
     return (
         <StoreContext.Provider value={{ store }}>
             {props.children}
