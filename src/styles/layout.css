@@ -79,6 +79,7 @@ footer {
 }
 
 main {
+    width: inherit;
     padding: var(--page-padding) var(--page-padding) var(--menu-height);
 }
 
@@ -260,7 +261,7 @@ body {
             align-items: center;
             z-index: 2;
             height: 100%;
-            width: 100%;
+            width: inherit;
         }
 
             #page-nav {
