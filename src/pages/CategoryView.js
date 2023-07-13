@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import useGetCat from '../hooks/useGetCat';
+import useStore from '../hooks/useStore';
 
 import CatNav from '../components/CatNav';
 import ProductNotFound from '../components/ProductNotFound';
@@ -9,7 +9,8 @@ import ItemCard from '../components/ItemCard';
 
 const CategoryView = () => {
     const { category } = useParams()
-    const { data } = useGetCat();
+    const { getCat } = useStore();
+    const data = getCat(category);
 
     function getPageTitle(str) {
         let strParts = str.split(' ');
@@ -19,7 +20,9 @@ const CategoryView = () => {
 
     let pageTitle = getPageTitle(category);
     let content = [];
-    if (data.length === 0) {
+    if (data === null) {
+        return;
+    } else if (data.length === 0) {
         content.push(<ProductNotFound key='not-found' />);
     } else {
         data.forEach(item => {

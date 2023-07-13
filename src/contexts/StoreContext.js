@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export const StoreContext = createContext(null);
 
 const StoreProvider = (props) => {
-    const [ store, setStore ] = useState([]);
+    const [ store, setStore ] = useState(null);
 
     useEffect(() => {
         const fetchData = async() => {
