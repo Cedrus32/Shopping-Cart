@@ -21,12 +21,14 @@ const CategoryView = () => {
 
     let pageTitle = getPageTitle(category);
     let content = [];
-    if (data !== null && data.length === 0) {
-        content.push(<ProductNotFound key='not-found' />);
-    } else if (data !== null) {
-        data.forEach(item => {
-            content.push(<ItemCard key={item.id} data={item} />);
-        });
+    if (data !== null) {
+        if (data.length === 0) {
+            content.push(<ProductNotFound key='not-found' />);
+        } else {
+            data.forEach(item => {
+                content.push(<ItemCard key={item.id} data={item} />);
+            });
+        }
     }
 
     return (
