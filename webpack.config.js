@@ -10,8 +10,8 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'), // resolve -> join
         filename: '[name].main.js',
-        // publicPath: '/Shopping-Cart/',
-        publicPath: '/',
+        publicPath: '/Shopping-Cart/',
+        // publicPath: '/',
         clean: true,
     },
     module: {
