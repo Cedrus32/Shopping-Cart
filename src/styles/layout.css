@@ -1,7 +1,7 @@
 :root {
     --page-width: 100vw;
-    --main-height: 90vh;
-    --menu-height: 10vh;
+    --main-height: 90dvh;
+    --menu-height: 10dvh;
     --page-padding: 2vh;
     --med-gap: 1em;
     --large-gap: calc(var(--med-gap) * 1.5);
@@ -90,7 +90,7 @@ button {
 /* LAYOUTS */
 
 body {
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
 }
 
