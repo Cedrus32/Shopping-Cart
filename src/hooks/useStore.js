@@ -4,6 +4,7 @@ import { StoreContext } from '../contexts/StoreContext';
 
 const useStore = () => {
     const { store } = useContext(StoreContext);
+    console.log(store);
 
     // checkers
     function inStore(query) {
@@ -17,15 +18,19 @@ const useStore = () => {
     }
     // getters
     function getCat(query) {
-        if (query === 'all') {
-            return store;
+        if (store === null) {
+            return null;
         } else {
-            let itemData = [];
-            let items = store.filter(item => item.category === query);
-            items.forEach(item => {
-                itemData.push({id: item.id, title: item.title, price: item.price, image: item.image});
-            });
-            return itemData;
+            if (query === 'all') {
+                return store;
+            } else {
+                let itemData = [];
+                let items = store.filter(item => item.category === query);
+                items.forEach(item => {
+                    itemData.push({id: item.id, title: item.title, price: item.price, image: item.image});
+                });
+                return itemData;
+            }
         }
     }
     function getStoreItem(query) {

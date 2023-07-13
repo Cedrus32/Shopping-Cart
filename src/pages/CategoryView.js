@@ -11,6 +11,7 @@ const CategoryView = () => {
     const { category } = useParams()
     const { getCat } = useStore();
     const data = getCat(category);
+    console.log(data);
 
     function getPageTitle(str) {
         let strParts = str.split(' ');
@@ -20,11 +21,9 @@ const CategoryView = () => {
 
     let pageTitle = getPageTitle(category);
     let content = [];
-    if (data === null) {
-        return;
-    } else if (data.length === 0) {
+    if (data !== null && data.length === 0) {
         content.push(<ProductNotFound key='not-found' />);
-    } else {
+    } else if (data !== null) {
         data.forEach(item => {
             content.push(<ItemCard key={item.id} data={item} />);
         });
