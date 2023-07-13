@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, createContext } from 'react';
+import React, { useState, useRef, useEffect, useContext, createContext } from 'react';
 import PropTypes from 'prop-types';
 
 import { StorageContext } from './StorageContext';
@@ -8,7 +8,7 @@ export const CartContext = createContext([]);
 const CartProvider = (props) => {
     const { storageStatus } = useContext(StorageContext);
     const [ cart, setCart ] = useState([]);
-    let storagePulled = false;
+    let storagePulled = useRef(false);
 
     useEffect(() => {
         if (storageStatus === true) {
@@ -17,9 +17,11 @@ const CartProvider = (props) => {
                 items.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
             }
             setCart(items);
-            storagePulled = true;
+            storagePulled.current = true;
         }
-    }, []);
+    }, [storageStatus]);
+
+    console.log(storageStatus, cart, storagePulled);
 
     return (
         <CartContext.Provider value={{ cart, setCart, storagePulled }}>

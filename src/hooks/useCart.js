@@ -4,6 +4,7 @@ import { CartContext } from '../contexts/CartContext';
 
 const useCart = () => {
     const { cart, setCart, storagePulled } = useContext(CartContext);
+    console.log(cart, setCart, storagePulled);
 
     // state setters
     function addItem(data) {
@@ -19,13 +20,13 @@ const useCart = () => {
             ...cart,
             item
         ]);
-        if (storagePulled) {
+        if (storagePulled.current) {
             localStorage.setItem(data.id, JSON.stringify(item));
         }
     }
     function removeItem(query) {
         setCart(cart.filter(item => item.id !== query));
-        if (storagePulled) {
+        if (storagePulled.current) {
             localStorage.removeItem(query);
         }
     }
@@ -42,7 +43,7 @@ const useCart = () => {
         let cartCopy = cart;
         cartCopy.splice(index, 1, item);
         setCart([...cartCopy]);
-        if (storagePulled) {
+        if (storagePulled.current) {
             localStorage.setItem(query, JSON.stringify(item));
         }
     }
