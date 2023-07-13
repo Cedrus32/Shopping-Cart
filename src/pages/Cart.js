@@ -7,7 +7,7 @@ import EmptyCart from '../components/EmptyCart';
 import CartFooter from '../components/CartFooter';
 
 const Cart = () => {
-    const { cart, removeItem, updateItem } = useCart();
+    const { cart } = useCart();
     let items = [];
     let total = 0;
 
@@ -24,7 +24,7 @@ const Cart = () => {
         items.push(<EmptyCart key='empty-cart' />);
     } else {
         cart.forEach(item => {
-            items.push(<ItemLine key={item.id} data={item} removeItem={removeItem} updateItem={updateItem} />);
+            items.push(<ItemLine key={item.id} data={item} />);
             total += (item.price * item.count);
         });
     }

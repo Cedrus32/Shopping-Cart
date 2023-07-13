@@ -6,14 +6,14 @@ import Product from '../components/Product';
 import ProductNotFound from '../components/ProductNotFound';
 
 const ItemView = () => {
-    const { exists, data, updateItem, removeItem, addItem } = useGetItem();
+    const { exists, data } = useGetItem();
 
     let content;
     if (exists.inStore !== null) {
         if (!exists.inStore) {
             content = <ProductNotFound key='not-found' />;
         } else {
-            content = <Product exists={exists.inCart} data={data} updateItem={updateItem} removeItem={removeItem} addItem={addItem} />;
+            content = <Product exists={exists.inCart} data={data} />;
         }
     }
 

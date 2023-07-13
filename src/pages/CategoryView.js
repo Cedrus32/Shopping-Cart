@@ -11,7 +11,6 @@ const CategoryView = () => {
     const { category } = useParams()
     const { getCat } = useStore();
     const data = getCat(category);
-    console.log(data);
 
     function getPageTitle(str) {
         let strParts = str.split(' ');

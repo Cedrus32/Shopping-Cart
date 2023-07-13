@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import formatCurrency from '../scripts/currency';
+import useCart from '../hooks/useCart';
 
 import Counter from '../components/Counter';
 import AddButton from '../components/AddButton';
 import RemoveButton from '../components/RemoveButton';
 
 const Product = (props) => {
-    const { exists, data, updateItem, removeItem, addItem } = props;
+    const { exists, data } = props;
+    const { addItem, removeItem, updateItem } = useCart();
     let counter;
     let button;
 
@@ -35,9 +37,6 @@ const Product = (props) => {
 Product.propTypes = {
     exists: PropTypes.bool,
     data: PropTypes.object,
-    updateItem: PropTypes.func,
-    removeItem: PropTypes.func,
-    addItem: PropTypes.func,
 }
 
 export default Product;

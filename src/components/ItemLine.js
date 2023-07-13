@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import formatCurrency from '../scripts/currency';
+import useCart from '../hooks/useCart';
 
 import Counter from './Counter';
 import RemoveButton from './RemoveButton';
 
 const ItemLine = (props) => {
-    const { data, removeItem, updateItem } = props;
+    const { data } = props;
+    const { removeItem, updateItem } = useCart();
 
     return (
        <article className='item-line'>
@@ -23,8 +25,6 @@ const ItemLine = (props) => {
 }
 ItemLine.propTypes = {
     data: PropTypes.object,
-    removeItem: PropTypes.func,
-    updateItem: PropTypes.func
 }
 
 export default ItemLine;

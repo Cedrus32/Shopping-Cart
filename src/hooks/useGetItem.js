@@ -6,9 +6,9 @@ import useStore from '../hooks/useStore';
 const useGetItem = () => {
     const { id } = useParams();
     const { inStore, getStoreItem } = useStore();
-    const { addItem, removeItem, updateItem, inCart, getCartItem } = useCart();
-    let data;
+    const { inCart, getCartItem } = useCart(); // NOTE: move method imports to item-action component
     let exists = {inCart: null, inStore: null};
+    let data;
 
     exists.inCart = inCart(id);
     if (!exists.inCart) {
@@ -24,9 +24,6 @@ const useGetItem = () => {
     return {
         exists,
         data,
-        updateItem,
-        removeItem,
-        addItem,
     }
 };
 
