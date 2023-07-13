@@ -7,20 +7,23 @@ export const CartContext = createContext([]);
 
 const CartProvider = (props) => {
     const { storageStatus } = useContext(StorageContext);
-    console.log(storageStatus);
     const [ cart, setCart ] = useState([]);
     let storagePulled = useRef(false);
 
     useEffect(() => {
+        // localStorage.clear();
         if (storageStatus === true) {
+            const storageData = JSON.parse(localStorage.getItem('top-shopping-cart'))
             let items = [];
-            for (let i = 0; i < localStorage.length; i++) {
-                items.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+            if (storageData !== null) {
+                for (let i = 0; i < storageData.length; i++) {
+                    items.push(storageData[i]);
+                }
             }
             setCart(items);
             storagePulled.current = true;
         }
-    }, [storageStatus]);
+    }, [storageStatus])
 
     return (
         <CartContext.Provider value={{ cart, setCart, storagePulled }}>
