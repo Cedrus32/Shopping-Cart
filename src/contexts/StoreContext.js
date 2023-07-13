@@ -17,11 +17,6 @@ const StoreProvider = (props) => {
         fetchData();
     }, []);
 
-    function inStore(query) {
-        const bool = store.includes(item => item.id == query);
-        return bool;
-    }
-
     return (
         <StoreContext.Provider value={{ store }}>
             {props.children}
