@@ -4,7 +4,6 @@ import { CartContext } from '../contexts/CartContext';
 
 const useCart = () => {
     const { cart, setCart, storagePulled } = useContext(CartContext);
-    console.log(cart, setCart, storagePulled);
 
     // state setters
     function addItem(data) {

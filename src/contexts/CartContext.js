@@ -21,8 +21,6 @@ const CartProvider = (props) => {
         }
     }, [storageStatus]);
 
-    console.log(storageStatus, cart, storagePulled);
-
     return (
         <CartContext.Provider value={{ cart, setCart, storagePulled }}>
             {props.children}
