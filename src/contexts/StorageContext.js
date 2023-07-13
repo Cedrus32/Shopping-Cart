@@ -6,7 +6,8 @@ import getLSStatus from '../scripts/getLSStatus';
 export const StorageContext = createContext(false);
 
 const StorageProvider = (props) => {
-    const storageStatus = getLSStatus();
+    // const storageStatus = getLSStatus();
+    const storageStatus = false;
 
     return (
         <StorageContext.Provider value={{ storageStatus }}>

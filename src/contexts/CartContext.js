@@ -7,6 +7,7 @@ export const CartContext = createContext([]);
 
 const CartProvider = (props) => {
     const { storageStatus } = useContext(StorageContext);
+    console.log(storageStatus);
     const [ cart, setCart ] = useState([]);
     let storagePulled = useRef(false);
 
