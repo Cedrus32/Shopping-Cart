@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export const StoreContext = createContext(null);
 
 const StoreProvider = (props) => {
-    const [ store, setStore ] = useState(null);
+    const [ store, setStore ] = useState([]);
 
     useEffect(() => {
         const fetchData = async() => {
@@ -16,6 +16,8 @@ const StoreProvider = (props) => {
         };
         fetchData();
     }, []);
+
+    console.log(store);
 
     return (
         <StoreContext.Provider value={{ store }}>
