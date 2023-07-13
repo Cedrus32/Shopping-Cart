@@ -4,7 +4,6 @@ import { CartContext } from '../contexts/CartContext';
 
 const useCart = () => {
     const { cart, setCart, storagePulled } = useContext(CartContext);
-    console.log(storagePulled);
 
     // state setters
     function addItem(data) {
@@ -21,13 +20,13 @@ const useCart = () => {
             item
         ]);
         if (storagePulled.current) {
-            localStorage.setItem(data.id, JSON.stringify(item));
+            localStorage.setItem('top-shopping-cart', JSON.stringify([...cart, item]));
         }
     }
     function removeItem(query) {
         setCart(cart.filter(item => item.id !== query));
         if (storagePulled.current) {
-            localStorage.removeItem(query);
+            localStorage.setItem('top-shopping-cart', JSON.stringify(cart.filter(item => item.id !== query)));
         }
     }
     function updateItem(query, action, value) {
@@ -44,7 +43,7 @@ const useCart = () => {
         cartCopy.splice(index, 1, item);
         setCart([...cartCopy]);
         if (storagePulled.current) {
-            localStorage.setItem(query, JSON.stringify(item));
+            localStorage.setItem('top-shopping-cart', JSON.stringify([...cartCopy]));
         }
     }
     // checkers
