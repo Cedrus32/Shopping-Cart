@@ -7,16 +7,17 @@ const useStore = () => {
 
     // checkers
     function inStore(query) {
+        let exists = false;
         if (store === null) {
-            return null;
+            exists = null;
         } else {
             store.forEach(item => {
                 if (item.id == query) {
-                    return true;
+                    exists = true;
                 }
             });
-            return false;
         }
+        return exists;
     }
     // getters
     function getCat(query) {
