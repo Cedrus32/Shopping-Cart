@@ -76,7 +76,7 @@ body {
 
         #page-nav {
             backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blue(5px);
+            -webkit-backdrop-filter: blur(5px);
             border-top: var(--b-width) solid var(--dark);
         }
 
