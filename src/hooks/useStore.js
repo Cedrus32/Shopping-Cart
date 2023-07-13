@@ -4,17 +4,19 @@ import { StoreContext } from '../contexts/StoreContext';
 
 const useStore = () => {
     const { store } = useContext(StoreContext);
-    console.log(store);
 
     // checkers
     function inStore(query) {
-        let exists = false;
-        store.forEach(item => {
-            if (item.id == query) {
-                exists = true;
-            }
-        });
-        return exists;
+        if (store === null) {
+            return null;
+        } else {
+            store.forEach(item => {
+                if (item.id == query) {
+                    return true;
+                }
+            });
+            return false;
+        }
     }
     // getters
     function getCat(query) {
@@ -34,6 +36,7 @@ const useStore = () => {
         }
     }
     function getStoreItem(query) {
+        // NOTE: add null edge case?
         const item = store.filter(item => item.id == query);
         return item[0];
     }
